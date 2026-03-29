@@ -1,0 +1,71 @@
+import React from 'react';
+import { CheckCircle2, XCircle } from 'lucide-react';
+import MvaTable from './MvaTable';
+
+export default function ResultCard({ item, selections }) {
+  const isST = item.com_fidelidade !== undefined;
+
+  // Determine which MVA to highlight
+  const getActiveMva = () => {
+    if (!isST) return null;
+    
+    const group = selections.temFidelidade ? 'com' : 'sem';
+    let type = 'interno';
+    
+    if (selections.ufEmitente !== 'PB') {
+      if (selections.aliquotaNfe === '4') type = 'inter_4';
+      else if (selections.aliquotaNfe === '7') type = 'inter_7';
+      else if (selections.aliquotaNfe === '12') type = 'inter_12';
+    }
+    
+    return { group, type };
+  };
+
+  const activeMva = getActiveMva();
+
+  return (
+    <div className="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden hover:shadow-md transition-shadow">
+      <div className={`px-4 py-2 text-xs font-bold uppercase tracking-widest flex items-center justify-between ${isST ? 'bg-emerald-50 text-emerald-700' : 'bg-slate-50 text-slate-500'}`}>
+        <span>NCM: {item.ncm}</span>
+        <div className="flex items-center gap-1">
+          {isST ? (
+            <>
+              <CheckCircle2 className="w-3 h-3" />
+              <span>Sujeito à ST</span>
+            </>
+          ) : (
+            <>
+              <XCircle className="w-3 h-3" />
+              <span>Não sujeito à ST</span>
+            </>
+          )}
+        </div>
+      </div>
+      
+      <div className="p-5">
+        <div className="flex justify-between items-start gap-4 mb-4">
+          <h3 className="text-slate-800 font-medium leading-tight flex-1">
+            {item.descricao}
+          </h3>
+          <div className="text-right shrink-0">
+            <p className="text-[10px] text-slate-400 uppercase font-bold">Alíquota PB</p>
+            <p className="text-sm font-mono font-bold text-slate-700">{item.aliquota_interna_pb}%</p>
+          </div>
+        </div>
+
+        {isST && (
+          <div className="space-y-4">
+            <MvaTable 
+              comFidelidade={item.com_fidelidade} 
+              semFidelidade={item.sem_fidelidade} 
+              activeMva={activeMva}
+            />
+            <p className="text-[10px] text-slate-400 italic leading-relaxed">
+              * Use MVA Interno quando o fornecedor é da Paraíba. Use MVA Interestadual conforme a alíquota de origem da NF-e de entrada (4%, 7% ou 12%).
+            </p>
+          </div>
+        )}
+      </div>
+    </div>
+  );
+}
