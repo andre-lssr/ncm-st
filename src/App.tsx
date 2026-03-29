@@ -9,18 +9,19 @@ import { motion, AnimatePresence } from 'motion/react';
 
 export default function App() {
   const [ncmSearch, setNcmSearch] = useState('');
+  const [cestSearch, setCestSearch] = useState('');
   const [descSearch, setDescSearch] = useState('');
   
   // Theme state
   const [theme, setTheme] = useState(() => {
     try {
       if (typeof window !== 'undefined') {
-        return localStorage.getItem('theme') || 'light';
+        return localStorage.getItem('theme') || 'dark';
       }
     } catch (e) {
       console.warn('LocalStorage not available for theme:', e);
     }
-    return 'light';
+    return 'dark';
   });
 
   useEffect(() => {
@@ -49,43 +50,49 @@ export default function App() {
   const [showFidelityInfo, setShowFidelityInfo] = useState(false);
 
   const filteredResults = useMemo(() => {
-    if (!ncmSearch && !descSearch) return [];
+    if (!ncmSearch && !descSearch && !cestSearch) return [];
 
-    return anexoV.filter((item) => {
+    return anexoV.filter((item: any) => {
       const matchNcm = ncmSearch ? item.ncm.replace(/\D/g, '').startsWith(ncmSearch.replace(/\D/g, '')) : true;
+      const matchCest = cestSearch ? (item.cest || '').replace(/\D/g, '').startsWith(cestSearch.replace(/\D/g, '')) : true;
       const matchDesc = descSearch ? item.descricao.toLowerCase().includes(descSearch.toLowerCase()) : true;
-      return matchNcm && matchDesc;
+      return matchNcm && matchCest && matchDesc;
     });
-  }, [ncmSearch, descSearch]);
+  }, [ncmSearch, descSearch, cestSearch]);
 
-  const hasSearch = ncmSearch.length > 0 || descSearch.length > 0;
+  const hasSearch = ncmSearch.length > 0 || descSearch.length > 0 || cestSearch.length > 0;
 
   const selections = { ufEmitente, aliquotaNfe, temFidelidade };
 
   return (
     <div className="min-h-screen bg-slate-50 dark:bg-slate-950 flex flex-col font-sans text-slate-900 dark:text-slate-100 transition-colors">
       {/* Header */}
-      <header className="bg-emerald-700 dark:bg-emerald-900 text-white py-4 px-4 shadow-sm relative transition-colors">
+      <header className="bg-black text-white py-4 px-4 shadow-sm relative transition-colors border-b-2 border-red-600">
         <div className="max-w-5xl mx-auto relative z-10 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <div className="bg-white/20 p-1.5 rounded-lg backdrop-blur-sm">
+            <div className="bg-red-600 p-1.5 rounded-lg">
               <FileSearch className="w-5 h-5" />
             </div>
             <div>
               <h1 className="text-lg font-bold tracking-tight">Consulta NCM / ST Paraíba</h1>
-              <p className="text-emerald-100/70 text-[10px] hidden sm:block uppercase tracking-wider font-medium">
+              <p className="text-slate-400 text-[10px] hidden sm:block uppercase tracking-wider font-medium">
                 Anexo V RICMS/PB • Substituição Tributária
               </p>
             </div>
           </div>
           
-          <button 
-            onClick={toggleTheme}
-            className="p-2 rounded-full bg-white/10 hover:bg-white/20 transition-colors"
-            title="Alternar tema"
-          >
-            {theme === 'light' ? <Moon className="w-4 h-4" /> : <Sun className="w-4 h-4" />}
-          </button>
+          <div className="flex items-center gap-4">
+            <div className="hidden md:flex items-center gap-2 px-3 py-1 bg-red-600/10 border border-red-600/20 rounded-full">
+              <span className="text-[10px] font-black text-red-600 tracking-tighter uppercase italic">Nego</span>
+            </div>
+            <button 
+              onClick={toggleTheme}
+              className="p-2 rounded-full bg-white/10 hover:bg-white/20 transition-colors"
+              title="Alternar tema"
+            >
+              {theme === 'light' ? <Moon className="w-4 h-4" /> : <Sun className="w-4 h-4" />}
+            </button>
+          </div>
         </div>
       </header>
 
@@ -95,6 +102,8 @@ export default function App() {
           <SearchBar 
             ncmSearch={ncmSearch} 
             setNcmSearch={setNcmSearch} 
+            cestSearch={cestSearch}
+            setCestSearch={setCestSearch}
             descSearch={descSearch} 
             setDescSearch={setDescSearch} 
           />
@@ -111,7 +120,7 @@ export default function App() {
                   <button
                     key={uf}
                     onClick={() => setUfEmitente(uf)}
-                    className={`flex-1 py-2 px-4 rounded-lg text-sm font-medium border transition-all ${ufEmitente === uf ? 'bg-emerald-600 border-emerald-600 text-white shadow-sm' : 'bg-white dark:bg-slate-800 border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 hover:border-emerald-200 hover:bg-emerald-50 dark:hover:bg-emerald-950/30'}`}
+                    className={`flex-1 py-2 px-4 rounded-lg text-sm font-medium border transition-all ${ufEmitente === uf ? 'bg-red-600 border-red-600 text-white shadow-sm' : 'bg-white dark:bg-slate-800 border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 hover:border-red-200 hover:bg-red-50 dark:hover:bg-red-950/30'}`}
                   >
                     {uf === 'PB' ? 'Paraíba (PB)' : 'Outra UF'}
                   </button>
@@ -128,7 +137,7 @@ export default function App() {
                   <button
                     key={aliq}
                     onClick={() => setAliquotaNfe(aliq)}
-                    className={`flex-1 py-2 px-2 rounded-lg text-sm font-medium border transition-all ${aliquotaNfe === aliq ? 'bg-emerald-600 border-emerald-600 text-white shadow-sm' : 'bg-white dark:bg-slate-800 border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 hover:border-emerald-200 hover:bg-emerald-50 dark:hover:bg-emerald-950/30'}`}
+                    className={`flex-1 py-2 px-2 rounded-lg text-sm font-medium border transition-all ${aliquotaNfe === aliq ? 'bg-red-600 border-red-600 text-white shadow-sm' : 'bg-white dark:bg-slate-800 border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 hover:border-red-200 hover:bg-red-50 dark:hover:bg-red-950/30'}`}
                   >
                     {aliq}%
                   </button>
@@ -143,7 +152,7 @@ export default function App() {
                 </label>
                 <button 
                   onClick={() => setShowFidelityInfo(true)}
-                  className="flex items-center gap-1 text-[10px] font-bold text-emerald-600 dark:text-emerald-400 hover:text-emerald-700 dark:hover:text-emerald-300 transition-colors bg-emerald-50 dark:bg-emerald-950/30 px-2 py-0.5 rounded-full border border-emerald-100 dark:border-emerald-900/50"
+                  className="flex items-center gap-1 text-[10px] font-bold text-red-600 dark:text-red-400 hover:text-red-700 dark:hover:text-red-300 transition-colors bg-red-50 dark:bg-red-950/30 px-2 py-0.5 rounded-full border border-red-100 dark:border-red-900/50"
                 >
                   <HelpCircle className="w-3 h-3" />
                   O que é isso?
@@ -154,7 +163,7 @@ export default function App() {
                   <button
                     key={val.toString()}
                     onClick={() => setTemFidelidade(val)}
-                    className={`flex-1 py-2 px-4 rounded-lg text-sm font-medium border transition-all ${temFidelidade === val ? 'bg-emerald-600 border-emerald-600 text-white shadow-sm' : 'bg-white dark:bg-slate-800 border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 hover:border-emerald-200 hover:bg-emerald-50 dark:hover:bg-emerald-950/30'}`}
+                    className={`flex-1 py-2 px-4 rounded-lg text-sm font-medium border transition-all ${temFidelidade === val ? 'bg-red-600 border-red-600 text-white shadow-sm' : 'bg-white dark:bg-slate-800 border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 hover:border-red-200 hover:bg-red-50 dark:hover:bg-red-950/30'}`}
                   >
                     {val ? 'Sim' : 'Não'}
                   </button>
@@ -167,7 +176,7 @@ export default function App() {
             {!hasSearch ? (
               <div className="text-center py-20 bg-white dark:bg-slate-900 rounded-2xl border border-dashed border-slate-300 dark:border-slate-700 transition-colors">
                 <FileSearch className="w-16 h-16 text-slate-200 dark:text-slate-800 mx-auto mb-4" />
-                <h2 className="text-xl font-medium text-slate-400 dark:text-slate-500">Digite um NCM ou descrição para começar</h2>
+                <h2 className="text-xl font-medium text-slate-400 dark:text-slate-500">Digite um NCM, CEST ou descrição para começar</h2>
                 <p className="text-slate-400 dark:text-slate-500 text-sm mt-1">A busca é realizada em tempo real sobre a base de dados do Anexo V.</p>
               </div>
             ) : filteredResults.length > 0 ? (
@@ -181,7 +190,12 @@ export default function App() {
                       exit={{ opacity: 0, scale: 0.95 }}
                       transition={{ duration: 0.2, delay: Math.min(index * 0.05, 0.5) }}
                     >
-                      <ResultCard item={item} selections={selections} />
+                      <ResultCard 
+                        item={item} 
+                        selections={selections} 
+                        ncmSearch={ncmSearch}
+                        cestSearch={cestSearch}
+                      />
                     </motion.div>
                   ))}
                 </AnimatePresence>
@@ -193,13 +207,13 @@ export default function App() {
                 className="bg-amber-50 dark:bg-amber-950/20 border border-amber-200 dark:border-amber-900/50 p-8 rounded-2xl text-center"
               >
                 <AlertCircle className="w-12 h-12 text-amber-500 mx-auto mb-4" />
-                <h2 className="text-xl font-bold text-amber-800 dark:text-amber-400 mb-2">NCM não encontrado no Anexo V</h2>
+                <h2 className="text-xl font-bold text-amber-800 dark:text-amber-400 mb-2">NCM/CEST não encontrado no Anexo V</h2>
                 <p className="text-amber-700 dark:text-amber-500">
-                  O produto consultado pode não estar sujeito à Substituição Tributária (ST) no Estado da Paraíba ou o NCM informado está incorreto.
+                  O produto consultado pode não estar sujeito à Substituição Tributária (ST) no Estado da Paraíba ou o código informado está incorreto.
                 </p>
                 <div className="mt-6 flex justify-center gap-4">
                   <button 
-                    onClick={() => { setNcmSearch(''); setDescSearch(''); }}
+                    onClick={() => { setNcmSearch(''); setDescSearch(''); setCestSearch(''); }}
                     className="text-amber-800 dark:text-amber-400 font-semibold hover:underline text-sm"
                   >
                     Limpar busca

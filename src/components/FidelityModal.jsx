@@ -24,8 +24,8 @@ export default function FidelityModal({ isOpen, onClose }) {
             <div className="p-6">
               <div className="flex items-center justify-between mb-6">
                 <div className="flex items-center gap-3">
-                  <div className="bg-emerald-100 dark:bg-emerald-900/50 p-2 rounded-lg">
-                    <Info className="w-5 h-5 text-emerald-600 dark:text-emerald-400" />
+                  <div className="bg-red-100 dark:bg-red-900/50 p-2 rounded-lg">
+                    <Info className="w-5 h-5 text-red-600 dark:text-red-400" />
                   </div>
                   <h2 className="text-xl font-bold text-slate-900 dark:text-white">Contrato de Fidelidade</h2>
                 </div>
@@ -48,7 +48,7 @@ export default function FidelityModal({ isOpen, onClose }) {
                   </h3>
                   <ul className="space-y-3">
                     <li className="flex items-start gap-2">
-                      <span className="text-emerald-500 font-bold">→</span>
+                      <span className="text-red-500 font-bold">→</span>
                       <span><strong>Com contrato:</strong> a empresa compra diretamente do fabricante ou como distribuidor autorizado. Aplica-se <strong>MVA menor</strong> no cálculo do ICMS-ST.</span>
                     </li>
                     <li className="flex items-start gap-2">
@@ -83,7 +83,7 @@ export default function FidelityModal({ isOpen, onClose }) {
 
               <button 
                 onClick={onClose}
-                className="w-full mt-8 py-3 bg-emerald-600 hover:bg-emerald-700 text-white font-bold rounded-xl transition-all shadow-lg shadow-emerald-600/20 active:scale-[0.98]"
+                className="w-full mt-8 py-3 bg-red-600 hover:bg-red-700 text-white font-bold rounded-xl transition-all shadow-lg shadow-red-600/20 active:scale-[0.98]"
               >
                 Entendi
               </button>

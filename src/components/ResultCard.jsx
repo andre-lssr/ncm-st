@@ -2,7 +2,7 @@ import React from 'react';
 import { CheckCircle2, XCircle } from 'lucide-react';
 import MvaTable from './MvaTable';
 
-export default function ResultCard({ item, selections }) {
+export default function ResultCard({ item, selections, ncmSearch, cestSearch }) {
   const isST = item.com_fidelidade !== undefined;
 
   // Determine which MVA to highlight
@@ -23,10 +23,23 @@ export default function ResultCard({ item, selections }) {
 
   const activeMva = getActiveMva();
 
+  // Highlighting logic
+  const highlightNcm = cestSearch.length > 0 && ncmSearch.length === 0;
+  const highlightCest = ncmSearch.length > 0 && cestSearch.length === 0;
+
   return (
     <div className="bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-slate-200 dark:border-slate-800 overflow-hidden hover:shadow-md transition-all">
-      <div className={`px-4 py-2 text-xs font-bold uppercase tracking-widest flex items-center justify-between ${isST ? 'bg-emerald-50 dark:bg-emerald-950/30 text-emerald-700 dark:text-emerald-400' : 'bg-slate-50 dark:bg-slate-800/50 text-slate-500 dark:text-slate-400'}`}>
-        <span>NCM: {item.ncm}</span>
+      <div className={`px-4 py-2 text-xs font-bold uppercase tracking-widest flex items-center justify-between ${isST ? 'bg-red-50 dark:bg-red-950/30 text-red-700 dark:text-red-400' : 'bg-slate-50 dark:bg-slate-800/50 text-slate-500 dark:text-slate-400'}`}>
+        <div className="flex gap-4">
+          <span className={highlightNcm ? 'bg-yellow-200 dark:bg-yellow-900/50 text-slate-900 dark:text-yellow-200 px-1 rounded' : ''}>
+            NCM: {item.ncm}
+          </span>
+          {item.cest && (
+            <span className={highlightCest ? 'bg-yellow-200 dark:bg-yellow-900/50 text-slate-900 dark:text-yellow-200 px-1 rounded' : ''}>
+              CEST: {item.cest}
+            </span>
+          )}
+        </div>
         <div className="flex items-center gap-1">
           {isST ? (
             <>

@@ -32,48 +32,56 @@ export const anexoV = [
   // CEST 01. Autopeças
   {
     ncm: "3815.12.10",
+    cest: "01.006.00",
     descricao: "Catalisadores em colmeia cerâmica ou metálica para conversão catalítica de gases de escape de veículos",
     aliquota_interna_pb: 20,
     ...autopeçasMva
   },
   {
     ncm: "3815.12.90",
+    cest: "01.006.00",
     descricao: "Catalisadores em colmeia cerâmica ou metálica para conversão catalítica de gases de escape de veículos",
     aliquota_interna_pb: 20,
     ...autopeçasMva
   },
   {
     ncm: "3917",
+    cest: "01.007.00",
     descricao: "Tubos e seus acessórios (por exemplo: juntas, cotovelos, flanges, uniões), de plásticos",
     aliquota_interna_pb: 20,
     ...autopeçasMva
   },
   {
     ncm: "3918.10.00",
+    cest: "01.001.00",
     descricao: "Protetores de caçamba",
     aliquota_interna_pb: 20,
     ...autopeçasMva
   },
   {
     ncm: "3923.30.00",
+    cest: "01.002.00",
     descricao: "Reservatórios de óleo",
     aliquota_interna_pb: 20,
     ...autopeçasMva
   },
   {
     ncm: "3926.30.00",
+    cest: "01.003.00",
     descricao: "Frisos, decalques, molduras e acabamentos",
     aliquota_interna_pb: 20,
     ...autopeçasMva
   },
   {
     ncm: "4010.3",
+    cest: "01.004.00",
     descricao: "Correias de transmissão de borracha vulcanizada",
     aliquota_interna_pb: 20,
     ...autopeçasMva
   },
   {
     ncm: "5910.00.00",
+    cest: "01.005.00",
     descricao: "Correias de transmissão de borracha vulcanizada",
     aliquota_interna_pb: 20,
     ...autopeçasMva
@@ -92,66 +100,77 @@ export const anexoV = [
   },
   {
     ncm: "4016.10.10",
+    cest: "01.008.00",
     descricao: "Partes de veículos automóveis, tratores e máquinas autopropulsadas",
     aliquota_interna_pb: 20,
     ...autopeçasMva
   },
   {
     ncm: "4016.99.90",
+    cest: "01.009.00",
     descricao: "Tapetes, revestimentos, mesmo confeccionados, batentes, buchas e coxins",
     aliquota_interna_pb: 20,
     ...autopeçasMva
   },
   {
     ncm: "5705.00.00",
+    cest: "01.009.00",
     descricao: "Tapetes, revestimentos, mesmo confeccionados, batentes, buchas e coxins",
     aliquota_interna_pb: 20,
     ...autopeçasMva
   },
   {
     ncm: "5903.90.00",
+    cest: "01.010.00",
     descricao: "Tecidos impregnados, revestidos, recobertos ou estratificados, com plástico",
     aliquota_interna_pb: 20,
     ...autopeçasMva
   },
   {
     ncm: "5909.00.00",
+    cest: "01.011.00",
     descricao: "Mangueiras e tubos semelhantes, de matérias têxteis, mesmo com reforço ou acessórios",
     aliquota_interna_pb: 20,
     ...autopeçasMva
   },
   {
     ncm: "6306.1",
+    cest: "01.012.00",
     descricao: "Encerados e toldos",
     aliquota_interna_pb: 20,
     ...autopeçasMva
   },
   {
     ncm: "6506.10.00",
+    cest: "01.013.00",
     descricao: "Capacetes e artefatos de uso semelhante, de proteção, para uso em motocicletas",
     aliquota_interna_pb: 20,
     ...autopeçasMva
   },
   {
     ncm: "6813",
+    cest: "01.014.00",
     descricao: "Guarnições de fricção (por exemplo: placas, rolos, tiras, segmentos, discos, anéis, pastilhas)",
     aliquota_interna_pb: 20,
     ...autopeçasMva
   },
   {
     ncm: "7007.11.00",
+    cest: "01.015.00",
     descricao: "Vidros de dimensões e formatos que permitam aplicação automotiva",
     aliquota_interna_pb: 20,
     ...autopeçasMva
   },
   {
     ncm: "7007.21.00",
+    cest: "01.015.00",
     descricao: "Vidros de dimensões e formatos que permitam aplicação automotiva",
     aliquota_interna_pb: 20,
     ...autopeçasMva
   },
   {
     ncm: "7009.10.00",
+    cest: "01.016.00",
     descricao: "Espelhos retrovisores",
     aliquota_interna_pb: 20,
     ...autopeçasMva
@@ -404,18 +423,21 @@ export const anexoV = [
   },
   {
     ncm: "8512.20",
+    cest: "01.011.00",
     descricao: "Aparelhos elétricos de iluminação ou de sinalização",
     aliquota_interna_pb: 20,
     ...autopeçasMva
   },
   {
     ncm: "8512.40",
+    cest: "01.011.00",
     descricao: "Limpadores de para-brisas, degeladores e desembaçadores elétricos",
     aliquota_interna_pb: 20,
     ...autopeçasMva
   },
   {
     ncm: "8512.90.00",
+    cest: "01.011.00",
     descricao: "Partes de aparelhos elétricos de iluminação ou sinalização",
     aliquota_interna_pb: 20,
     ...autopeçasMva
@@ -746,36 +768,42 @@ export const anexoV = [
   },
   {
     ncm: "8507.20",
+    cest: "01.006.00",
     descricao: "Baterias de chumbo e de níquel-cádmio",
     aliquota_interna_pb: 20,
     ...autopeçasMva
   },
   {
     ncm: "8507.30",
+    cest: "01.007.00",
     descricao: "Baterias de chumbo e de níquel-cádmio",
     aliquota_interna_pb: 20,
     ...autopeçasMva
   },
   {
     ncm: "8512.30.00",
+    cest: "01.011.00",
     descricao: "Aparelhos de sinalização acústica (buzina)",
     aliquota_interna_pb: 20,
     ...autopeçasMva
   },
   {
     ncm: "9032.89.8",
+    cest: "01.124.00",
     descricao: "Instrumentos para regulação de grandezas não elétricas",
     aliquota_interna_pb: 20,
     ...autopeçasMva
   },
   {
     ncm: "9032.89.9",
+    cest: "01.124.00",
     descricao: "Instrumentos para regulação de grandezas não elétricas",
     aliquota_interna_pb: 20,
     ...autopeçasMva
   },
   {
     ncm: "9027.10.00",
+    cest: "01.121.00",
     descricao: "Analisadores de gases ou de fumaça (sonda lambda)",
     aliquota_interna_pb: 20,
     ...autopeçasMva
@@ -1100,6 +1128,7 @@ export const anexoV = [
   },
   {
     ncm: "2206.00.90",
+    cest: "02.024.00",
     descricao: "Sangrias e coquetéis",
     aliquota_interna_pb: 27,
     com_fidelidade: {
@@ -1117,6 +1146,7 @@ export const anexoV = [
   },
   {
     ncm: "2204",
+    cest: "02.001.00",
     descricao: "Vinhos de uvas frescas, incluindo os vinhos enriquecidos com álcool",
     aliquota_interna_pb: 27,
     ...bebidasMva
@@ -1125,6 +1155,7 @@ export const anexoV = [
   // CEST 05. Cimentos
   {
     ncm: "2523",
+    cest: "05.001.00",
     descricao: "Cimento",
     aliquota_interna_pb: 20,
     com_fidelidade: {
