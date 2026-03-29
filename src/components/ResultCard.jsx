@@ -24,8 +24,8 @@ export default function ResultCard({ item, selections }) {
   const activeMva = getActiveMva();
 
   return (
-    <div className="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden hover:shadow-md transition-shadow">
-      <div className={`px-4 py-2 text-xs font-bold uppercase tracking-widest flex items-center justify-between ${isST ? 'bg-emerald-50 text-emerald-700' : 'bg-slate-50 text-slate-500'}`}>
+    <div className="bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-slate-200 dark:border-slate-800 overflow-hidden hover:shadow-md transition-all">
+      <div className={`px-4 py-2 text-xs font-bold uppercase tracking-widest flex items-center justify-between ${isST ? 'bg-emerald-50 dark:bg-emerald-950/30 text-emerald-700 dark:text-emerald-400' : 'bg-slate-50 dark:bg-slate-800/50 text-slate-500 dark:text-slate-400'}`}>
         <span>NCM: {item.ncm}</span>
         <div className="flex items-center gap-1">
           {isST ? (
@@ -44,12 +44,12 @@ export default function ResultCard({ item, selections }) {
       
       <div className="p-5">
         <div className="flex justify-between items-start gap-4 mb-4">
-          <h3 className="text-slate-800 font-medium leading-tight flex-1">
+          <h3 className="text-slate-800 dark:text-slate-200 font-medium leading-tight flex-1">
             {item.descricao}
           </h3>
           <div className="text-right shrink-0">
-            <p className="text-[10px] text-slate-400 uppercase font-bold">Alíquota PB</p>
-            <p className="text-sm font-mono font-bold text-slate-700">{item.aliquota_interna_pb}%</p>
+            <p className="text-[10px] text-slate-400 dark:text-slate-500 uppercase font-bold">Alíquota PB</p>
+            <p className="text-sm font-mono font-bold text-slate-700 dark:text-slate-300">{item.aliquota_interna_pb}%</p>
           </div>
         </div>
 
@@ -60,7 +60,7 @@ export default function ResultCard({ item, selections }) {
               semFidelidade={item.sem_fidelidade} 
               activeMva={activeMva}
             />
-            <p className="text-[10px] text-slate-400 italic leading-relaxed">
+            <p className="text-[10px] text-slate-400 dark:text-slate-500 italic leading-relaxed">
               * Use MVA Interno quando o fornecedor é da Paraíba. Use MVA Interestadual conforme a alíquota de origem da NF-e de entrada (4%, 7% ou 12%).
             </p>
           </div>

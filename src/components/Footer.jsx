@@ -3,12 +3,12 @@ import { Info } from 'lucide-react';
 
 export default function Footer() {
   return (
-    <footer className="mt-auto py-8 border-t border-slate-200">
-      <div className="flex items-start gap-3 text-slate-500 max-w-2xl mx-auto px-4">
-        <Info className="w-5 h-5 mt-0.5 flex-shrink-0 text-slate-400" />
+    <footer className="mt-auto py-8 border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 transition-colors">
+      <div className="flex items-start gap-3 text-slate-500 dark:text-slate-400 max-w-2xl mx-auto px-4">
+        <Info className="w-5 h-5 mt-0.5 flex-shrink-0 text-slate-400 dark:text-slate-600" />
         <p className="text-sm leading-relaxed">
           Base: <span className="font-semibold">Anexo V do RICMS/PB</span> — Atualizado em 09/07/2025. 
-          Esta ferramenta é para consulta rápida e uso interno. <span className="text-slate-700 font-medium">Consulte sempre a legislação vigente e o Diário Oficial para decisões fiscais.</span>
+          Esta ferramenta é para consulta rápida e uso interno. <span className="text-slate-700 dark:text-slate-300 font-medium">Consulte sempre a legislação vigente e o Diário Oficial para decisões fiscais.</span>
         </p>
       </div>
     </footer>
