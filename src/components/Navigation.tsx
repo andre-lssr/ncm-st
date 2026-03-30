@@ -1,10 +1,10 @@
 
 import React from 'react';
-import { Search, FileCode, FileText, ExternalLink } from 'lucide-react';
+import { Search, FileCode, FileText, ExternalLink, ClipboardList } from 'lucide-react';
 
 interface NavigationProps {
-  currentView: 'search' | 'xml';
-  onViewChange: (view: 'search' | 'xml') => void;
+  currentView: 'search' | 'xml' | 'sped';
+  onViewChange: (view: 'search' | 'xml' | 'sped') => void;
 }
 
 export default function Navigation({ currentView, onViewChange }: NavigationProps) {
@@ -25,6 +25,12 @@ export default function Navigation({ currentView, onViewChange }: NavigationProp
             onClick={() => onViewChange('xml')}
             icon={<FileCode className="w-4 h-4" />}
             label="Analisar XML"
+          />
+          <NavItem 
+            active={currentView === 'sped'} 
+            onClick={() => onViewChange('sped')}
+            icon={<ClipboardList className="w-4 h-4" />}
+            label="SPED Fiscal"
           />
         </div>
         

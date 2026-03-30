@@ -6,11 +6,12 @@ import Footer from './components/Footer';
 import FidelityModal from './components/FidelityModal';
 import Navigation from './components/Navigation';
 import XmlAnalysis from './views/XmlAnalysis';
+import SpedAnalysis from './views/SpedAnalysis';
 import { FileSearch, AlertCircle, Calculator, Sun, Moon, HelpCircle } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 
 export default function App() {
-  const [view, setView] = useState<'search' | 'xml'>('search');
+  const [view, setView] = useState<'search' | 'xml' | 'sped'>('search');
   const [ncmSearch, setNcmSearch] = useState('');
   const [cestSearch, setCestSearch] = useState('');
   const [descSearch, setDescSearch] = useState('');
@@ -105,6 +106,8 @@ export default function App() {
       <main className="flex-1 max-w-5xl w-full mx-auto px-4 mt-8 pb-12">
         {view === 'xml' ? (
           <XmlAnalysis />
+        ) : view === 'sped' ? (
+          <SpedAnalysis />
         ) : (
           <div className="space-y-6">
             <SearchBar 

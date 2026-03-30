@@ -1,5 +1,5 @@
 {
   "name": "ncm-st",
-  "description": "",
+  "description": "Consulta de NCM/ST Paraíba, Análise de XML de NF-e e Validação/Ajuste de Inventário SPED Fiscal.",
   "requestFramePermissions": []
 }
