@@ -696,6 +696,7 @@ export const anexoV = [
   },
   {
     ncm: "8412.31.10",
+    cest: "01.006.00",
     descricao: "Cilindros pneumáticos",
     aliquota_interna_pb: 20,
     ...autopeçasMva
