@@ -1,10 +1,10 @@
 
 import React from 'react';
-import { Search, FileCode, FileText, ExternalLink, ClipboardList } from 'lucide-react';
+import { Search, FileCode, FileText, ExternalLink, ClipboardList, FileArchive } from 'lucide-react';
 
 interface NavigationProps {
-  currentView: 'search' | 'xml' | 'sped';
-  onViewChange: (view: 'search' | 'xml' | 'sped') => void;
+  currentView: 'search' | 'xml' | 'sped' | 'zip';
+  onViewChange: (view: 'search' | 'xml' | 'sped' | 'zip') => void;
 }
 
 export default function Navigation({ currentView, onViewChange }: NavigationProps) {
@@ -13,24 +13,30 @@ export default function Navigation({ currentView, onViewChange }: NavigationProp
   return (
     <nav className="bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 sticky top-0 z-40 transition-colors">
       <div className="max-w-5xl mx-auto px-4 flex items-center justify-between h-14">
-        <div className="flex items-center gap-1 sm:gap-4 h-full">
+        <div className="flex items-center gap-1 sm:gap-4 h-full overflow-x-auto no-scrollbar">
           <NavItem 
             active={currentView === 'search'} 
             onClick={() => onViewChange('search')}
             icon={<Search className="w-4 h-4" />}
-            label="Consulta NCM / CEST"
+            label="Consulta"
           />
           <NavItem 
             active={currentView === 'xml'} 
             onClick={() => onViewChange('xml')}
             icon={<FileCode className="w-4 h-4" />}
-            label="Analisar XML"
+            label="XML"
+          />
+          <NavItem 
+            active={currentView === 'zip'} 
+            onClick={() => onViewChange('zip')}
+            icon={<FileArchive className="w-4 h-4" />}
+            label="Análise ZIP"
           />
           <NavItem 
             active={currentView === 'sped'} 
             onClick={() => onViewChange('sped')}
             icon={<ClipboardList className="w-4 h-4" />}
-            label="SPED Fiscal"
+            label="SPED"
           />
         </div>
         

@@ -7,11 +7,12 @@ import FidelityModal from './components/FidelityModal';
 import Navigation from './components/Navigation';
 import XmlAnalysis from './views/XmlAnalysis';
 import SpedAnalysis from './views/SpedAnalysis';
+import ZipAnalysis from './views/ZipAnalysis';
 import { FileSearch, AlertCircle, Calculator, Sun, Moon, HelpCircle } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 
 export default function App() {
-  const [view, setView] = useState<'search' | 'xml' | 'sped'>('search');
+  const [view, setView] = useState<'search' | 'xml' | 'sped' | 'zip'>('search');
   const [ncmSearch, setNcmSearch] = useState('');
   const [cestSearch, setCestSearch] = useState('');
   const [descSearch, setDescSearch] = useState('');
@@ -108,6 +109,8 @@ export default function App() {
           <XmlAnalysis />
         ) : view === 'sped' ? (
           <SpedAnalysis />
+        ) : view === 'zip' ? (
+          <ZipAnalysis />
         ) : (
           <div className="space-y-6">
             <SearchBar 
