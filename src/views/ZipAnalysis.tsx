@@ -2,12 +2,12 @@
 import React, { useState, useMemo, useRef } from 'react';
 import { 
   Upload, FileArchive, TrendingUp, Users, Package, ShieldCheck, 
-  AlertTriangle, Download, Printer, ChevronRight, BarChart3, 
+  AlertTriangle, Download, Printer, ChevronRight, 
   PieChart as PieChartIcon, ArrowUpRight, ArrowDownRight, 
   Search, Filter, Info, CheckCircle2, XCircle, FileText,
-  Truck, ShoppingCart, DollarSign, Activity, Layers, 
+  Truck, DollarSign, Activity, Layers, 
   RefreshCcw, Eye, EyeOff, LayoutDashboard, AlertCircle,
-  GitCompare, List, MapPin, CreditCard, ShoppingBag
+  List, MapPin, CreditCard, ShoppingBag
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { 
@@ -17,7 +17,7 @@ import {
 } from 'recharts';
 import { processZipFile, NfeData, NfeProduct } from '../utils/zipParser';
 
-type ViewMode = 'gerencial' | 'fiscal' | 'alerts' | 'cross' | 'list';
+type ViewMode = 'gerencial' | 'fiscal' | 'financeiro' | 'logistica' | 'alerts' | 'list';
 
 interface Alert {
   type: 'warning' | 'error' | 'info';
@@ -77,6 +77,17 @@ export default function ZipAnalysis() {
     const totalSales = sales.reduce((acc, n) => acc + n.totals.totalValue, 0);
     const totalPurchases = purchases.reduce((acc, n) => acc + n.totals.totalValue, 0);
     const ticketMedio = sales.length > 0 ? totalSales / sales.length : 0;
+
+    // --- Financial Analysis (Payment Methods) ---
+    const paymentStats: Record<string, number> = {};
+    sales.forEach(n => {
+      n.paymentMethods.forEach(p => {
+        paymentStats[p.type] = (paymentStats[p.type] || 0) + p.value;
+      });
+    });
+    const paymentChartData = Object.entries(paymentStats)
+      .map(([name, value]) => ({ name, value }))
+      .sort((a, b) => b.value - a.value);
 
     // --- Time Series Analysis ---
     const salesByDate: Record<string, number> = {};
@@ -264,13 +275,14 @@ export default function ZipAnalysis() {
       pis: acc.pis + n.totals.pis,
       cofins: acc.cofins + n.totals.cofins,
       fcp: acc.fcp + n.totals.fcp,
+      issqn: acc.issqn + (n.totals.issqn || 0),
       freight: acc.freight + n.totals.freight,
       insurance: acc.insurance + n.totals.insurance,
       discount: acc.discount + n.totals.discount,
       others: acc.others + n.totals.others,
-    }), { icms: 0, st: 0, ipi: 0, pis: 0, cofins: 0, fcp: 0, freight: 0, insurance: 0, discount: 0, others: 0 });
+    }), { icms: 0, st: 0, ipi: 0, pis: 0, cofins: 0, fcp: 0, issqn: 0, freight: 0, insurance: 0, discount: 0, others: 0 });
 
-    const totalTaxesValue = taxes.icms + taxes.st + taxes.ipi + taxes.pis + taxes.cofins + taxes.fcp;
+    const totalTaxesValue = taxes.icms + taxes.st + taxes.ipi + taxes.pis + taxes.cofins + taxes.fcp + taxes.issqn;
 
     // --- Alerts ---
     const alerts: Alert[] = [];
@@ -378,6 +390,7 @@ export default function ZipAnalysis() {
       cstTotals,
       taxes,
       totalTaxesValue,
+      paymentChartData,
       alerts,
       salesTrend,
       salesTrendUp,
@@ -491,8 +504,9 @@ export default function ZipAnalysis() {
             {[
               { id: 'gerencial', label: 'Visão Gerencial', icon: LayoutDashboard },
               { id: 'fiscal', label: 'Visão Fiscal', icon: FileText },
+              { id: 'financeiro', label: 'Financeiro', icon: CreditCard },
+              { id: 'logistica', label: 'Logística', icon: Truck },
               { id: 'alerts', label: 'Alertas', icon: AlertCircle, count: stats.alerts.length },
-              { id: 'cross', label: 'Cruzamento', icon: GitCompare },
               { id: 'list', label: 'Lista de Notas', icon: List },
             ].map((tab) => (
               <button
@@ -682,26 +696,30 @@ export default function ZipAnalysis() {
                         </div>
                       )}
 
-                      {/* Purchased but not sold */}
-                      {stats.purchasedNotSold.length > 0 && (
-                        <div className="bg-white dark:bg-slate-900 p-6 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm">
-                          <h3 className="font-bold text-slate-900 dark:text-white flex items-center gap-2 mb-6">
-                            <ShoppingBag className="w-5 h-5 text-red-500" />
-                            Produtos Sem Giro (Estoque Parado)
-                          </h3>
-                          <div className="space-y-4">
-                            {stats.purchasedNotSold.slice(0, 5).map((code, idx) => (
-                              <div key={idx} className="flex items-center justify-between">
-                                <div>
-                                  <p className="text-xs font-bold text-slate-900 dark:text-white line-clamp-1">{code}</p>
-                                  <p className="text-[10px] text-slate-400">Comprado mas não vendido no período</p>
-                                </div>
-                                <AlertTriangle className="w-4 h-4 text-amber-500" />
-                              </div>
-                            ))}
+                      {/* Estimated Tax Burden */}
+                      <div className="bg-white dark:bg-slate-900 p-6 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm">
+                        <h3 className="font-bold text-slate-900 dark:text-white flex items-center gap-2 mb-6">
+                          <ShieldCheck className="w-5 h-5 text-red-600" />
+                          Carga Tributária Estimada
+                        </h3>
+                        <div className="space-y-6">
+                          <div className="text-center p-4 bg-slate-50 dark:bg-slate-800 rounded-xl">
+                            <p className="text-[10px] font-bold text-slate-400 uppercase mb-1">Total de Impostos</p>
+                            <h4 className="text-2xl font-bold text-red-600">
+                              R$ {stats.totalTaxesValue.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}
+                            </h4>
+                            <p className="text-[10px] text-slate-500 mt-1 font-medium">
+                              Representa {stats.totalSales > 0 ? ((stats.totalTaxesValue / stats.totalSales) * 100).toFixed(1) : 0}% do faturamento
+                            </p>
+                          </div>
+                          
+                          <div className="space-y-3">
+                            <TaxItem label="ICMS" value={stats.taxes.icms} total={stats.totalTaxesValue} color="bg-red-500" />
+                            <TaxItem label="PIS/COFINS" value={stats.taxes.pis + stats.taxes.cofins} total={stats.totalTaxesValue} color="bg-blue-500" />
+                            <TaxItem label="Outros" value={stats.totalTaxesValue - stats.taxes.icms - stats.taxes.pis - stats.taxes.cofins} total={stats.totalTaxesValue} color="bg-slate-400" />
                           </div>
                         </div>
-                      )}
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -769,6 +787,7 @@ export default function ZipAnalysis() {
                           <TaxItem label="IPI" value={stats.taxes.ipi} total={stats.totalTaxesValue} color="bg-blue-500" />
                           <TaxItem label="PIS" value={stats.taxes.pis} total={stats.totalTaxesValue} color="bg-emerald-500" />
                           <TaxItem label="COFINS" value={stats.taxes.cofins} total={stats.totalTaxesValue} color="bg-indigo-500" />
+                          <TaxItem label="ISSQN" value={stats.taxes.issqn} total={stats.totalTaxesValue} color="bg-cyan-500" />
                           <TaxItem label="FCP" value={stats.taxes.fcp} total={stats.totalTaxesValue} color="bg-purple-500" />
                         </div>
                       </div>
@@ -915,89 +934,140 @@ export default function ZipAnalysis() {
                 </div>
               )}
 
-              {viewMode === 'cross' && (
+              {viewMode === 'financeiro' && (
                 <div className="space-y-8">
-                  {/* Cross Analysis Charts */}
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                    <StatCard 
+                      label="Ticket Médio" 
+                      value={`R$ ${stats.ticketMedio.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}`}
+                      icon={<Activity className="w-5 h-5 text-amber-500" />}
+                    />
+                    <StatCard 
+                      label="Total Descontos" 
+                      value={`R$ ${stats.taxes.discount.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}`}
+                      icon={<ArrowDownRight className="w-5 h-5 text-red-500" />}
+                    />
+                    <StatCard 
+                      label="Total Outros" 
+                      value={`R$ ${stats.taxes.others.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}`}
+                      icon={<DollarSign className="w-5 h-5 text-slate-500" />}
+                    />
+                  </div>
+
                   <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                     <div className="bg-white dark:bg-slate-900 p-6 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm">
                       <h3 className="font-bold text-slate-900 dark:text-white flex items-center gap-2 mb-6">
-                        <GitCompare className="w-5 h-5 text-red-600" />
-                        Entradas vs Saídas (Mensal)
+                        <CreditCard className="w-5 h-5 text-red-600" />
+                        Meios de Pagamento
                       </h3>
                       <div className="h-[300px] w-full">
                         <ResponsiveContainer width="100%" height="100%">
-                          <AreaChart data={stats.monthlyChartData.map(m => ({
-                            ...m,
-                            purchases: nfeList
-                              .filter(n => n.type === 'entrada' && n.emissionDate.startsWith(m.month))
-                              .reduce((acc, n) => acc + n.totals.totalValue, 0)
-                          }))}>
-                            <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#f1f5f9" />
-                            <XAxis dataKey="month" fontSize={10} axisLine={false} tickLine={false} />
-                            <YAxis fontSize={10} axisLine={false} tickLine={false} />
-                            <Tooltip />
+                          <PieChart>
+                            <Pie
+                              data={stats.paymentChartData}
+                              cx="50%"
+                              cy="50%"
+                              innerRadius={60}
+                              outerRadius={100}
+                              paddingAngle={5}
+                              dataKey="value"
+                              label={({ name, percent }) => `${name} ${(percent * 100).toFixed(0)}%`}
+                            >
+                              {stats.paymentChartData.map((_, index) => (
+                                <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+                              ))}
+                            </Pie>
+                            <Tooltip formatter={(v: number) => `R$ ${v.toLocaleString('pt-BR')}`} />
                             <Legend />
-                            <Area type="monotone" dataKey="value" name="Vendas" stroke="#ef4444" fill="#ef4444" fillOpacity={0.1} />
-                            <Area type="monotone" dataKey="purchases" name="Compras" stroke="#3b82f6" fill="#3b82f6" fillOpacity={0.1} />
-                          </AreaChart>
+                          </PieChart>
                         </ResponsiveContainer>
                       </div>
                     </div>
 
                     <div className="bg-white dark:bg-slate-900 p-6 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm">
                       <h3 className="font-bold text-slate-900 dark:text-white flex items-center gap-2 mb-6">
-                        <Activity className="w-5 h-5 text-red-600" />
-                        Análise de Margem por Produto
+                        <DollarSign className="w-5 h-5 text-emerald-600" />
+                        Resumo Financeiro
                       </h3>
-                      <div className="h-[300px] w-full">
+                      <div className="space-y-6">
+                        <div className="flex justify-between items-center p-4 bg-slate-50 dark:bg-slate-800 rounded-xl">
+                          <span className="text-sm text-slate-500">Valor Bruto</span>
+                          <span className="text-lg font-bold text-slate-900 dark:text-white">R$ {stats.totalSales.toLocaleString('pt-BR')}</span>
+                        </div>
+                        <div className="flex justify-between items-center p-4 bg-red-50 dark:bg-red-950/20 rounded-xl">
+                          <span className="text-sm text-red-600">Total Descontos</span>
+                          <span className="text-lg font-bold text-red-600">- R$ {stats.taxes.discount.toLocaleString('pt-BR')}</span>
+                        </div>
+                        <div className="flex justify-between items-center p-4 bg-emerald-50 dark:bg-emerald-950/20 rounded-xl">
+                          <span className="text-sm text-emerald-600">Valor Líquido Estimado</span>
+                          <span className="text-lg font-bold text-emerald-600">R$ {(stats.totalSales - stats.taxes.discount).toLocaleString('pt-BR')}</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              )}
+
+              {viewMode === 'logistica' && (
+                <div className="space-y-8">
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                    <StatCard 
+                      label="Total Frete" 
+                      value={`R$ ${stats.taxes.freight.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}`}
+                      icon={<Truck className="w-5 h-5 text-blue-500" />}
+                    />
+                    <StatCard 
+                      label="Total Seguro" 
+                      value={`R$ ${stats.taxes.insurance.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}`}
+                      icon={<ShieldCheck className="w-5 h-5 text-indigo-500" />}
+                    />
+                    <StatCard 
+                      label="Estados Atendidos" 
+                      value={stats.ufChartData.length.toString()}
+                      icon={<MapPin className="w-5 h-5 text-red-500" />}
+                    />
+                  </div>
+
+                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <div className="bg-white dark:bg-slate-900 p-6 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm">
+                      <h3 className="font-bold text-slate-900 dark:text-white flex items-center gap-2 mb-6">
+                        <MapPin className="w-5 h-5 text-red-600" />
+                        Distribuição Regional (Faturamento por UF)
+                      </h3>
+                      <div className="h-[400px] w-full">
                         <ResponsiveContainer width="100%" height="100%">
-                          <BarChart data={stats.productProfitability.slice(0, 10)}>
-                            <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#f1f5f9" />
-                            <XAxis dataKey="code" fontSize={10} axisLine={false} tickLine={false} />
-                            <YAxis fontSize={10} axisLine={false} tickLine={false} unit="%" />
-                            <Tooltip />
-                            <Bar dataKey="margin" name="Margem %" fill="#10b981" radius={[4, 4, 0, 0]} />
+                          <BarChart data={stats.ufChartData} layout="vertical">
+                            <CartesianGrid strokeDasharray="3 3" horizontal={false} stroke="#f1f5f9" />
+                            <XAxis type="number" fontSize={10} axisLine={false} tickLine={false} />
+                            <YAxis dataKey="name" type="category" fontSize={10} axisLine={false} tickLine={false} width={40} />
+                            <Tooltip formatter={(v: number) => `R$ ${v.toLocaleString('pt-BR')}`} />
+                            <Bar dataKey="value" fill="#ef4444" radius={[0, 4, 4, 0]} />
                           </BarChart>
                         </ResponsiveContainer>
                       </div>
                     </div>
-                  </div>
 
-                  {/* Profitability Table */}
-                  <div className="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 overflow-hidden shadow-sm">
-                    <div className="px-6 py-4 border-b border-slate-100 dark:border-slate-800">
-                      <h3 className="font-bold text-slate-900 dark:text-white">Detalhamento de Lucratividade</h3>
-                    </div>
-                    <div className="overflow-x-auto">
-                      <table className="w-full text-left border-collapse">
-                        <thead>
-                          <tr className="bg-slate-50 dark:bg-slate-800/50 border-b border-slate-100 dark:border-slate-800">
-                            <th className="px-6 py-3 text-[10px] font-bold text-slate-400 uppercase">Produto</th>
-                            <th className="px-6 py-3 text-[10px] font-bold text-slate-400 uppercase text-right">Preço Venda Médio</th>
-                            <th className="px-6 py-3 text-[10px] font-bold text-slate-400 uppercase text-right">Custo Médio</th>
-                            <th className="px-6 py-3 text-[10px] font-bold text-slate-400 uppercase text-right">Margem %</th>
-                            <th className="px-6 py-3 text-[10px] font-bold text-slate-400 uppercase text-right">Lucro Total</th>
-                          </tr>
-                        </thead>
-                        <tbody className="divide-y divide-slate-50 dark:divide-slate-800">
-                          {stats.productProfitability.slice(0, 15).map((p, idx) => (
-                            <tr key={idx} className="hover:bg-slate-50/50 dark:hover:bg-slate-800/20 transition-colors">
-                              <td className="px-6 py-4">
-                                <p className="text-sm font-bold text-slate-900 dark:text-white line-clamp-1">{p.description}</p>
-                                <p className="text-[10px] text-slate-400 font-mono">{p.code}</p>
-                              </td>
-                              <td className="px-6 py-4 text-sm text-right font-mono">R$ {p.avgSalePrice.toFixed(2)}</td>
-                              <td className="px-6 py-4 text-sm text-right font-mono">R$ {p.avgCost.toFixed(2)}</td>
-                              <td className={`px-6 py-4 text-sm text-right font-bold font-mono ${p.margin < 0 ? 'text-red-600' : 'text-emerald-600'}`}>
-                                {p.margin.toFixed(1)}%
-                              </td>
-                              <td className={`px-6 py-4 text-sm text-right font-bold font-mono ${p.totalProfit < 0 ? 'text-red-600' : 'text-emerald-600'}`}>
-                                R$ {p.totalProfit.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}
-                              </td>
-                            </tr>
-                          ))}
-                        </tbody>
-                      </table>
+                    <div className="bg-white dark:bg-slate-900 p-6 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm">
+                      <h3 className="font-bold text-slate-900 dark:text-white flex items-center gap-2 mb-6">
+                        <Package className="w-5 h-5 text-red-600" />
+                        Top 10 NCMs (Categorias de Produtos)
+                      </h3>
+                      <div className="space-y-4">
+                        {stats.ncmChartData.map((item, idx) => (
+                          <div key={idx} className="space-y-1">
+                            <div className="flex justify-between text-xs">
+                              <span className="font-mono text-slate-500">{item.name}</span>
+                              <span className="font-bold text-slate-900 dark:text-white">R$ {item.value.toLocaleString('pt-BR')}</span>
+                            </div>
+                            <div className="h-1.5 w-full bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden">
+                              <div 
+                                className="h-full bg-red-500" 
+                                style={{ width: `${(item.value / stats.totalSales) * 100}%` }}
+                              />
+                            </div>
+                          </div>
+                        ))}
+                      </div>
                     </div>
                   </div>
                 </div>

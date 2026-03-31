@@ -41,6 +41,10 @@ export interface NfeData {
     city: string;
   };
   products: NfeProduct[];
+  paymentMethods: {
+    type: string;
+    value: number;
+  }[];
   totals: {
     totalValue: number;
     icmsBase: number;
@@ -50,6 +54,7 @@ export interface NfeData {
     ipi: number;
     pis: number;
     cofins: number;
+    issqn: number;
     freight: number;
     insurance: number;
     discount: number;
@@ -61,6 +66,26 @@ const parser = new XMLParser({
   ignoreAttributes: false,
   attributeNamePrefix: "@_",
 });
+
+const PAYMENT_TYPES: Record<string, string> = {
+  '01': 'Dinheiro',
+  '02': 'Cheque',
+  '03': 'Cartão de Crédito',
+  '04': 'Cartão de Débito',
+  '05': 'Crédito Loja',
+  '10': 'Vale Alimentação',
+  '11': 'Vale Refeição',
+  '12': 'Vale Presente',
+  '13': 'Vale Combustível',
+  '14': 'Duplicata Mercantil',
+  '15': 'Boleto Bancário',
+  '16': 'Depósito Bancário',
+  '17': 'Pagamento Instantâneo (PIX)',
+  '18': 'Transferência Bancária',
+  '19': 'Programa de Fidelidade',
+  '90': 'Sem Pagamento',
+  '99': 'Outros',
+};
 
 export async function processZipFile(file: File): Promise<NfeData[]> {
   const zip = new JSZip();
@@ -89,6 +114,14 @@ export async function processZipFile(file: File): Promise<NfeData[]> {
       const dest = infNFe.dest || {};
       const det = Array.isArray(infNFe.det) ? infNFe.det : (infNFe.det ? [infNFe.det] : []);
       const total = infNFe.total?.ICMSTot || {};
+      const issTotal = infNFe.total?.ISSQNtot || {};
+      const pag = infNFe.pag || {};
+      const detPag = Array.isArray(pag.detPag) ? pag.detPag : (pag.detPag ? [pag.detPag] : []);
+
+      const paymentMethods = detPag.map((p: any) => ({
+        type: PAYMENT_TYPES[String(p.tPag).padStart(2, '0')] || 'Outros',
+        value: parseFloat(p.vPag || 0),
+      }));
 
       const products: NfeProduct[] = det.map((d: any) => {
         const prod = d.prod || {};
@@ -145,6 +178,7 @@ export async function processZipFile(file: File): Promise<NfeData[]> {
           city: String(dest.enderDest?.xMun || ''),
         },
         products,
+        paymentMethods,
         totals: {
           totalValue: parseFloat(total.vNF || 0),
           icmsBase: parseFloat(total.vBC || 0),
@@ -154,6 +188,7 @@ export async function processZipFile(file: File): Promise<NfeData[]> {
           ipi: parseFloat(total.vIPI || 0),
           pis: parseFloat(total.vPIS || 0),
           cofins: parseFloat(total.vCOFINS || 0),
+          issqn: parseFloat(issTotal.vISS || 0),
           freight: parseFloat(total.vFrete || 0),
           insurance: parseFloat(total.vSeg || 0),
           discount: parseFloat(total.vDesc || 0),
