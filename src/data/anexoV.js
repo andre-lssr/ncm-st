@@ -28,6 +28,231 @@ const bebidasMva = {
   }
 };
 
+const veiculosMva = {
+  com_fidelidade: {
+    interno: 30,
+    inter_4: 56,
+    inter_7: 51.13,
+    inter_12: 43
+  },
+  sem_fidelidade: {
+    interno: 30,
+    inter_4: 56,
+    inter_7: 51.13,
+    inter_12: 43
+  }
+};
+
+const lampadasMva = {
+  com_fidelidade: {
+    interno: 60.03,
+    inter_4: 92.04,
+    inter_7: 86.03,
+    inter_12: 76.03
+  },
+  sem_fidelidade: {
+    interno: 60.03,
+    inter_4: 92.04,
+    inter_7: 86.03,
+    inter_12: 76.03
+  }
+};
+
+const motosMva = {
+  com_fidelidade: {
+    interno: 34,
+    inter_4: 60.80,
+    inter_7: 55.78,
+    inter_12: 47.40
+  },
+  sem_fidelidade: {
+    interno: 34,
+    inter_4: 60.80,
+    inter_7: 55.78,
+    inter_12: 47.40
+  }
+};
+
+const pneusMva = {
+  com_fidelidade: {
+    interno: 42,
+    inter_4: 70.40,
+    inter_7: 65.08,
+    inter_12: 56.20
+  },
+  sem_fidelidade: {
+    interno: 42,
+    inter_4: 70.40,
+    inter_7: 65.08,
+    inter_12: 56.20
+  }
+};
+
+const pneusMotoMva = {
+  com_fidelidade: {
+    interno: 60,
+    inter_4: 92,
+    inter_7: 86,
+    inter_12: 76
+  },
+  sem_fidelidade: {
+    interno: 60,
+    inter_4: 92,
+    inter_7: 86,
+    inter_12: 76
+  }
+};
+
+const pneusOutrosMva = {
+  com_fidelidade: {
+    interno: 45,
+    inter_4: 74,
+    inter_7: 68.56,
+    inter_12: 59.50
+  },
+  sem_fidelidade: {
+    interno: 45,
+    inter_4: 74,
+    inter_7: 68.56,
+    inter_12: 59.50
+  }
+};
+
+const medPositivaMva = {
+  com_fidelidade: {
+    interno: 38.24,
+    inter_4: 65.89,
+    inter_7: 60.70,
+    inter_12: 52.06
+  },
+  sem_fidelidade: {
+    interno: 38.24,
+    inter_4: 65.89,
+    inter_7: 60.70,
+    inter_12: 52.06
+  }
+};
+
+const medNegativaMva = {
+  com_fidelidade: {
+    interno: 33.05,
+    inter_4: 59.66,
+    inter_7: 54.67,
+    inter_12: 46.36
+  },
+  sem_fidelidade: {
+    interno: 33.05,
+    inter_4: 59.66,
+    inter_7: 54.67,
+    inter_12: 46.36
+  }
+};
+
+const medNeutraMva = {
+  com_fidelidade: {
+    interno: 41.34,
+    inter_4: 69.61,
+    inter_7: 64.31,
+    inter_12: 55.47
+  },
+  sem_fidelidade: {
+    interno: 41.34,
+    inter_4: 69.61,
+    inter_7: 64.31,
+    inter_12: 55.47
+  }
+};
+
+const higienePessoalMva = {
+  com_fidelidade: {
+    interno: 67.96,
+    inter_4: 101.55,
+    inter_7: 95.25,
+    inter_12: 84.76
+  },
+  sem_fidelidade: {
+    interno: 67.96,
+    inter_4: 101.55,
+    inter_7: 95.25,
+    inter_12: 84.76
+  }
+};
+
+const alimentos13Mva = {
+  com_fidelidade: {
+    interno: 13,
+    inter_4: 35.60,
+    inter_7: 31.38,
+    inter_12: 24.34
+  },
+  sem_fidelidade: {
+    interno: 13,
+    inter_4: 35.60,
+    inter_7: 31.38,
+    inter_12: 24.34
+  }
+};
+
+const alimentos20Mva = {
+  com_fidelidade: {
+    interno: 20,
+    inter_4: 44,
+    inter_7: 39.50,
+    inter_12: 32
+  },
+  sem_fidelidade: {
+    interno: 20,
+    inter_4: 44,
+    inter_7: 39.50,
+    inter_12: 32
+  }
+};
+
+const alimentos40Mva = {
+  com_fidelidade: {
+    interno: 40,
+    inter_4: 68,
+    inter_7: 62.75,
+    inter_12: 54
+  },
+  sem_fidelidade: {
+    interno: 40,
+    inter_4: 68,
+    inter_7: 62.75,
+    inter_12: 54
+  }
+};
+
+const construcaoMva = {
+  com_fidelidade: {
+    interno: 40,
+    inter_4: 68,
+    inter_7: 62.75,
+    inter_12: 54
+  },
+  sem_fidelidade: {
+    interno: 40,
+    inter_4: 68,
+    inter_7: 62.75,
+    inter_12: 54
+  }
+};
+
+const cest03Mva = {
+  com_fidelidade: {
+    interno: 140,
+    inter_4: 140,
+    inter_7: 140,
+    inter_12: 140
+  },
+  sem_fidelidade: {
+    interno: 140,
+    inter_4: 140,
+    inter_7: 140,
+    inter_12: 140
+  }
+};
+
 export const anexoV = [
   // CEST 01. Autopeças
   {
@@ -1481,29 +1706,363 @@ export const anexoV = [
     aliquota_interna_pb: 27,
     ...bebidasMva
   },
+  // CEST 03. Cervejas, chopes, refrigerantes, águas e outras bebidas
   {
     ncm: "22011000",
-    descricao: "Águas minerais, gasosas ou não, ou potáveis",
+    cest: "03.003.00",
+    descricao: "Água mineral, gasosa ou não, ou potável, naturais, em embalagem de vidro descartável",
     aliquota_interna_pb: 20,
-    ...bebidasMva
+    ...cest03Mva
   },
   {
     ncm: "22019000",
-    descricao: "Águas minerais, gasosas ou não, ou potáveis",
+    cest: "03.003.00",
+    descricao: "Água mineral, gasosa ou não, ou potável, naturais, em embalagem de vidro descartável",
     aliquota_interna_pb: 20,
-    ...bebidasMva
+    ...cest03Mva
+  },
+  {
+    ncm: "22011000",
+    cest: "03.003.01",
+    descricao: "Água mineral, gasosa ou não, ou potável, naturais, adicionadas de sais, em embalagem de vidro descartável",
+    aliquota_interna_pb: 20,
+    ...cest03Mva
+  },
+  {
+    ncm: "22011000",
+    cest: "03.005.00",
+    descricao: "Água mineral, gasosa ou não, ou potável, naturais, em copo plástico descartável",
+    aliquota_interna_pb: 20,
+    ...cest03Mva
+  },
+  {
+    ncm: "22019000",
+    cest: "03.005.00",
+    descricao: "Água mineral, gasosa ou não, ou potável, naturais, em copo plástico descartável",
+    aliquota_interna_pb: 20,
+    ...cest03Mva
+  },
+  {
+    ncm: "22011000",
+    cest: "03.005.01",
+    descricao: "Água mineral, gasosa ou não, ou potável, naturais, adicionadas de sais, em copo plástico descartável",
+    aliquota_interna_pb: 20,
+    ...cest03Mva
+  },
+  {
+    ncm: "22011000",
+    cest: "03.005.02",
+    descricao: "Água mineral, gasosa ou não, ou potável, naturais, em jarra descartável",
+    aliquota_interna_pb: 20,
+    ...cest03Mva
+  },
+  {
+    ncm: "22019000",
+    cest: "03.005.02",
+    descricao: "Água mineral, gasosa ou não, ou potável, naturais, em jarra descartável",
+    aliquota_interna_pb: 20,
+    ...cest03Mva
+  },
+  {
+    ncm: "22011000",
+    cest: "03.005.03",
+    descricao: "Água mineral, gasosa ou não, ou potável, naturais, adicionadas de sais, em jarra descartável",
+    aliquota_interna_pb: 20,
+    ...cest03Mva
+  },
+  {
+    ncm: "22011000",
+    cest: "03.005.04",
+    descricao: "Água mineral, gasosa ou não, ou potável, naturais, em demais embalagens descartáveis",
+    aliquota_interna_pb: 20,
+    ...cest03Mva
+  },
+  {
+    ncm: "22019000",
+    cest: "03.005.04",
+    descricao: "Água mineral, gasosa ou não, ou potável, naturais, em demais embalagens descartáveis",
+    aliquota_interna_pb: 20,
+    ...cest03Mva
+  },
+  {
+    ncm: "22011000",
+    cest: "03.005.05",
+    descricao: "Água mineral, gasosa ou não, ou potável, naturais, adicionadas de sais, em demais embalagens descartáveis",
+    aliquota_interna_pb: 20,
+    ...cest03Mva
+  },
+  {
+    ncm: "2201",
+    cest: "03.006.00",
+    descricao: "Outras águas minerais, gasosas ou não, ou potável, naturais",
+    aliquota_interna_pb: 20,
+    ...cest03Mva
   },
   {
     ncm: "22021000",
-    descricao: "Refrigerantes, águas minerais, gasosas ou não, ou potáveis",
+    cest: "03.007.00",
+    descricao: "Água aromatizada artificialmente, exceto os refrescos e refrigerantes",
     aliquota_interna_pb: 20,
-    ...bebidasMva
+    ...cest03Mva
   },
   {
     ncm: "22029900",
-    descricao: "Refrigerantes, águas minerais, gasosas ou não, ou potáveis",
+    cest: "03.008.00",
+    descricao: "Outras águas minerais, gasosas ou não, ou potável, naturais, inclusive gaseificadas ou aromatizadas artificialmente",
     aliquota_interna_pb: 20,
-    ...bebidasMva
+    ...cest03Mva
+  },
+  {
+    ncm: "22021000",
+    cest: "03.010.00",
+    descricao: "Refrigerante em vidro descartável",
+    aliquota_interna_pb: 20,
+    ...cest03Mva
+  },
+  {
+    ncm: "22029900",
+    cest: "03.010.00",
+    descricao: "Refrigerante em vidro descartável",
+    aliquota_interna_pb: 20,
+    ...cest03Mva
+  },
+  {
+    ncm: "22021000",
+    cest: "03.010.01",
+    descricao: "Refrigerante em embalagem pet",
+    aliquota_interna_pb: 20,
+    ...cest03Mva
+  },
+  {
+    ncm: "22029900",
+    cest: "03.010.01",
+    descricao: "Refrigerante em embalagem pet",
+    aliquota_interna_pb: 20,
+    ...cest03Mva
+  },
+  {
+    ncm: "22021000",
+    cest: "03.010.02",
+    descricao: "Refrigerante em lata",
+    aliquota_interna_pb: 20,
+    ...cest03Mva
+  },
+  {
+    ncm: "22029900",
+    cest: "03.010.02",
+    descricao: "Refrigerante em lata",
+    aliquota_interna_pb: 20,
+    ...cest03Mva
+  },
+  {
+    ncm: "22021000",
+    cest: "03.011.00",
+    descricao: "Demais refrigerantes",
+    aliquota_interna_pb: 20,
+    ...cest03Mva
+  },
+  {
+    ncm: "22029900",
+    cest: "03.011.00",
+    descricao: "Demais refrigerantes",
+    aliquota_interna_pb: 20,
+    ...cest03Mva
+  },
+  {
+    ncm: "2202",
+    cest: "03.011.01",
+    descricao: "Espumantes sem álcool",
+    aliquota_interna_pb: 20,
+    ...cest03Mva
+  },
+  {
+    ncm: "21069010",
+    cest: "03.012.00",
+    descricao: "Xarope ou extrato concentrado destinados ao preparo de refrigerante em máquina",
+    aliquota_interna_pb: 20,
+    ...cest03Mva
+  },
+  {
+    ncm: "21069010",
+    cest: "03.012.01",
+    descricao: "Cápsula de refrigerante",
+    aliquota_interna_pb: 20,
+    ...cest03Mva
+  },
+  {
+    ncm: "210690",
+    cest: "03.013.00",
+    descricao: "Bebidas energéticas em lata",
+    aliquota_interna_pb: 20,
+    ...cest03Mva
+  },
+  {
+    ncm: "22029900",
+    cest: "03.013.00",
+    descricao: "Bebidas energéticas em lata",
+    aliquota_interna_pb: 20,
+    ...cest03Mva
+  },
+  {
+    ncm: "210690",
+    cest: "03.013.01",
+    descricao: "Bebidas energéticas em embalagem PET",
+    aliquota_interna_pb: 20,
+    ...cest03Mva
+  },
+  {
+    ncm: "22029900",
+    cest: "03.013.01",
+    descricao: "Bebidas energéticas em embalagem PET",
+    aliquota_interna_pb: 20,
+    ...cest03Mva
+  },
+  {
+    ncm: "210690",
+    cest: "03.013.02",
+    descricao: "Bebidas energéticas em vidro",
+    aliquota_interna_pb: 20,
+    ...cest03Mva
+  },
+  {
+    ncm: "22029900",
+    cest: "03.013.02",
+    descricao: "Bebidas energéticas em vidro",
+    aliquota_interna_pb: 20,
+    ...cest03Mva
+  },
+  {
+    ncm: "210690",
+    cest: "03.015.00",
+    descricao: "Bebidas hidroeletrolíticas",
+    aliquota_interna_pb: 20,
+    ...cest03Mva
+  },
+  {
+    ncm: "22029900",
+    cest: "03.015.00",
+    descricao: "Bebidas hidroeletrolíticas",
+    aliquota_interna_pb: 20,
+    ...cest03Mva
+  },
+  {
+    ncm: "22030000",
+    cest: "03.021.00",
+    descricao: "Cerveja em garrafa de vidro retornável",
+    aliquota_interna_pb: 20,
+    ...cest03Mva
+  },
+  {
+    ncm: "22030000",
+    cest: "03.021.01",
+    descricao: "Cerveja em garrafa de vidro descartável",
+    aliquota_interna_pb: 20,
+    ...cest03Mva
+  },
+  {
+    ncm: "22030000",
+    cest: "03.021.02",
+    descricao: "Cerveja em garrafa de alumínio",
+    aliquota_interna_pb: 20,
+    ...cest03Mva
+  },
+  {
+    ncm: "22030000",
+    cest: "03.021.03",
+    descricao: "Cerveja em lata",
+    aliquota_interna_pb: 20,
+    ...cest03Mva
+  },
+  {
+    ncm: "22030000",
+    cest: "03.021.04",
+    descricao: "Cerveja em barril",
+    aliquota_interna_pb: 20,
+    ...cest03Mva
+  },
+  {
+    ncm: "22030000",
+    cest: "03.021.05",
+    descricao: "Cerveja em embalagem PET",
+    aliquota_interna_pb: 20,
+    ...cest03Mva
+  },
+  {
+    ncm: "22030000",
+    cest: "03.021.06",
+    descricao: "Cerveja em outras embalagens",
+    aliquota_interna_pb: 20,
+    ...cest03Mva
+  },
+  {
+    ncm: "22029100",
+    cest: "03.022.00",
+    descricao: "Cerveja sem álcool em garrafa de vidro retornável",
+    aliquota_interna_pb: 20,
+    ...cest03Mva
+  },
+  {
+    ncm: "22029100",
+    cest: "03.022.01",
+    descricao: "Cerveja sem álcool em garrafa de vidro descartável",
+    aliquota_interna_pb: 20,
+    ...cest03Mva
+  },
+  {
+    ncm: "22029100",
+    cest: "03.022.02",
+    descricao: "Cerveja sem álcool em garrafa de alumínio",
+    aliquota_interna_pb: 20,
+    ...cest03Mva
+  },
+  {
+    ncm: "22029100",
+    cest: "03.022.03",
+    descricao: "Cerveja sem álcool em lata",
+    aliquota_interna_pb: 20,
+    ...cest03Mva
+  },
+  {
+    ncm: "22029100",
+    cest: "03.022.04",
+    descricao: "Cerveja sem álcool em barril",
+    aliquota_interna_pb: 20,
+    ...cest03Mva
+  },
+  {
+    ncm: "22029100",
+    cest: "03.022.05",
+    descricao: "Cerveja sem álcool em embalagem PET",
+    aliquota_interna_pb: 20,
+    ...cest03Mva
+  },
+  {
+    ncm: "22029100",
+    cest: "03.022.06",
+    descricao: "Cerveja sem álcool em outras embalagens",
+    aliquota_interna_pb: 20,
+    ...cest03Mva
+  },
+  {
+    ncm: "22030000",
+    cest: "03.023.00",
+    descricao: "Chope",
+    aliquota_interna_pb: 20,
+    ...cest03Mva
+  },
+  {
+    ncm: "22011000",
+    cest: "03.024.00",
+    descricao: "Água mineral em embalagens retornáveis com capacidade igual ou superior a 10 (dez) e inferior a 20 (vinte) litros",
+    aliquota_interna_pb: 20,
+    ...cest03Mva
+  },
+  {
+    ncm: "22011000",
+    cest: "03.025.00",
+    descricao: "Água mineral em embalagens retornáveis com capacidade igual ou superior a 20 (vinte) litros",
+    aliquota_interna_pb: 20,
+    ...cest03Mva
   },
   {
     ncm: "24022000",
@@ -1651,114 +2210,349 @@ export const anexoV = [
   // CEST 10. Construção
   {
     ncm: "39211100",
+    cest: "10.001.00",
     descricao: "Chapas e telhas de plástico",
     aliquota_interna_pb: 20,
-    ...bebidasMva
+    ...construcaoMva
   },
   {
     ncm: "39211200",
+    cest: "10.001.00",
     descricao: "Chapas e telhas de plástico",
     aliquota_interna_pb: 20,
-    ...bebidasMva
+    ...construcaoMva
   },
   {
     ncm: "39211300",
+    cest: "10.001.00",
     descricao: "Chapas e telhas de plástico",
     aliquota_interna_pb: 20,
-    ...bebidasMva
+    ...construcaoMva
   },
   {
     ncm: "39211400",
+    cest: "10.001.00",
     descricao: "Chapas e telhas de plástico",
     aliquota_interna_pb: 20,
-    ...bebidasMva
+    ...construcaoMva
   },
   {
     ncm: "39211900",
+    cest: "10.001.00",
     descricao: "Chapas e telhas de plástico",
     aliquota_interna_pb: 20,
-    ...bebidasMva
+    ...construcaoMva
   },
   {
     ncm: "39219011",
+    cest: "10.001.00",
     descricao: "Chapas e telhas de plástico",
     aliquota_interna_pb: 20,
-    ...bebidasMva
+    ...construcaoMva
   },
   {
     ncm: "39219019",
+    cest: "10.001.00",
     descricao: "Chapas e telhas de plástico",
     aliquota_interna_pb: 20,
-    ...bebidasMva
+    ...construcaoMva
   },
   {
     ncm: "39219020",
+    cest: "10.001.00",
     descricao: "Chapas e telhas de plástico",
     aliquota_interna_pb: 20,
-    ...bebidasMva
+    ...construcaoMva
   },
   {
     ncm: "39219090",
+    cest: "10.001.00",
     descricao: "Chapas e telhas de plástico",
     aliquota_interna_pb: 20,
-    ...bebidasMva
+    ...construcaoMva
   },
   {
     ncm: "69010000",
-    descricao: "Construção Geral",
+    cest: "10.002.00",
+    descricao: "Tijolos, placas, ladrilhos e outras peças cerâmicas de farinhas siliciosas fósseis",
     aliquota_interna_pb: 20,
-    ...bebidasMva
+    ...construcaoMva
   },
   {
     ncm: "70099100",
-    descricao: "Construção Geral",
+    cest: "10.003.00",
+    descricao: "Espelhos de vidro, mesmo emoldurados, excluídos os de uso automotivo",
     aliquota_interna_pb: 20,
-    ...bebidasMva
+    ...construcaoMva
   },
   {
     ncm: "70099200",
-    descricao: "Construção Geral",
+    cest: "10.003.00",
+    descricao: "Espelhos de vidro, mesmo emoldurados, excluídos os de uso automotivo",
     aliquota_interna_pb: 20,
-    ...bebidasMva
+    ...construcaoMva
   },
   {
     ncm: "73101010",
-    descricao: "Construção Geral",
+    cest: "10.004.00",
+    descricao: "Reservatórios, tonéis, cubas e recipientes semelhantes para quaisquer matérias",
     aliquota_interna_pb: 20,
-    ...bebidasMva
+    ...construcaoMva
   },
   {
     ncm: "73101090",
-    descricao: "Construção Geral",
+    cest: "10.004.00",
+    descricao: "Reservatórios, tonéis, cubas e recipientes semelhantes para quaisquer matérias",
     aliquota_interna_pb: 20,
-    ...bebidasMva
+    ...construcaoMva
   },
   {
     ncm: "73102110",
-    descricao: "Construção Geral",
+    cest: "10.005.00",
+    descricao: "Reservatórios, tonéis, cubas e recipientes semelhantes para quaisquer matérias",
     aliquota_interna_pb: 20,
-    ...bebidasMva
+    ...construcaoMva
   },
   {
     ncm: "73102190",
-    descricao: "Construção Geral",
+    cest: "10.005.00",
+    descricao: "Reservatórios, tonéis, cubas e recipientes semelhantes para quaisquer matérias",
     aliquota_interna_pb: 20,
-    ...bebidasMva
+    ...construcaoMva
   },
   {
     ncm: "73102910",
-    descricao: "Construção Geral",
+    cest: "10.006.00",
+    descricao: "Reservatórios, tonéis, cubas e recipientes semelhantes para quaisquer matérias",
     aliquota_interna_pb: 20,
-    ...bebidasMva
+    ...construcaoMva
   },
   {
     ncm: "73102990",
-    descricao: "Construção Geral",
+    cest: "10.006.00",
+    descricao: "Reservatórios, tonéis, cubas e recipientes semelhantes para quaisquer matérias",
     aliquota_interna_pb: 20,
-    ...bebidasMva
+    ...construcaoMva
   },
 
   // CEST 13. Medicamentos
+  {
+    ncm: "3003",
+    cest: "13.001.00",
+    descricao: "Medicamentos de referência - positiva, exceto para uso veterinário",
+    aliquota_interna_pb: 20,
+    ...medPositivaMva
+  },
+  {
+    ncm: "3004",
+    cest: "13.001.00",
+    descricao: "Medicamentos de referência - positiva, exceto para uso veterinário",
+    aliquota_interna_pb: 20,
+    ...medPositivaMva
+  },
+  {
+    ncm: "3003",
+    cest: "13.001.01",
+    descricao: "Medicamentos de referência - negativa, exceto para uso veterinário",
+    aliquota_interna_pb: 20,
+    ...medNegativaMva
+  },
+  {
+    ncm: "3004",
+    cest: "13.001.01",
+    descricao: "Medicamentos de referência - negativa, exceto para uso veterinário",
+    aliquota_interna_pb: 20,
+    ...medNegativaMva
+  },
+  {
+    ncm: "3003",
+    cest: "13.001.02",
+    descricao: "Medicamentos de referência - neutra, exceto para uso veterinário",
+    aliquota_interna_pb: 20,
+    ...medNeutraMva
+  },
+  {
+    ncm: "3004",
+    cest: "13.001.02",
+    descricao: "Medicamentos de referência - neutra, exceto para uso veterinário",
+    aliquota_interna_pb: 20,
+    ...medNeutraMva
+  },
+  {
+    ncm: "3003",
+    cest: "13.002.00",
+    descricao: "Medicamentos genérico - positiva, exceto para uso veterinário",
+    aliquota_interna_pb: 20,
+    ...medPositivaMva
+  },
+  {
+    ncm: "3004",
+    cest: "13.002.00",
+    descricao: "Medicamentos genérico - positiva, exceto para uso veterinário",
+    aliquota_interna_pb: 20,
+    ...medPositivaMva
+  },
+  {
+    ncm: "3003",
+    cest: "13.002.01",
+    descricao: "Medicamentos genérico - negativa, exceto para uso veterinário",
+    aliquota_interna_pb: 20,
+    ...medNegativaMva
+  },
+  {
+    ncm: "3004",
+    cest: "13.002.01",
+    descricao: "Medicamentos genérico - negativa, exceto para uso veterinário",
+    aliquota_interna_pb: 20,
+    ...medNegativaMva
+  },
+  {
+    ncm: "3003",
+    cest: "13.002.02",
+    descricao: "Medicamentos genérico - neutra, exceto para uso veterinário",
+    aliquota_interna_pb: 20,
+    ...medNeutraMva
+  },
+  {
+    ncm: "3004",
+    cest: "13.002.02",
+    descricao: "Medicamentos genérico - neutra, exceto para uso veterinário",
+    aliquota_interna_pb: 20,
+    ...medNeutraMva
+  },
+  {
+    ncm: "3003",
+    cest: "13.003.00",
+    descricao: "Medicamentos similar - positiva, exceto para uso veterinário",
+    aliquota_interna_pb: 20,
+    ...medPositivaMva
+  },
+  {
+    ncm: "3004",
+    cest: "13.003.00",
+    descricao: "Medicamentos similar - positiva, exceto para uso veterinário",
+    aliquota_interna_pb: 20,
+    ...medPositivaMva
+  },
+  {
+    ncm: "3003",
+    cest: "13.003.01",
+    descricao: "Medicamentos similar - negativa, exceto para uso veterinário",
+    aliquota_interna_pb: 20,
+    ...medNegativaMva
+  },
+  {
+    ncm: "3004",
+    cest: "13.003.01",
+    descricao: "Medicamentos similar - negativa, exceto para uso veterinário",
+    aliquota_interna_pb: 20,
+    ...medNegativaMva
+  },
+  {
+    ncm: "3003",
+    cest: "13.003.02",
+    descricao: "Medicamentos similar - neutra, exceto para uso veterinário",
+    aliquota_interna_pb: 20,
+    ...medNeutraMva
+  },
+  {
+    ncm: "3004",
+    cest: "13.003.02",
+    descricao: "Medicamentos similar - neutra, exceto para uso veterinário",
+    aliquota_interna_pb: 20,
+    ...medNeutraMva
+  },
+  {
+    ncm: "3003",
+    cest: "13.004.00",
+    descricao: "Outros tipos de medicamentos - positiva, exceto para uso veterinário",
+    aliquota_interna_pb: 20,
+    ...medPositivaMva
+  },
+  {
+    ncm: "3004",
+    cest: "13.004.00",
+    descricao: "Outros tipos de medicamentos - positiva, exceto para uso veterinário",
+    aliquota_interna_pb: 20,
+    ...medPositivaMva
+  },
+  {
+    ncm: "3003",
+    cest: "13.004.01",
+    descricao: "Outros tipos de medicamentos - negativa, exceto para uso veterinário",
+    aliquota_interna_pb: 20,
+    ...medNegativaMva
+  },
+  {
+    ncm: "3004",
+    cest: "13.004.01",
+    descricao: "Outros tipos de medicamentos - negativa, exceto para uso veterinário",
+    aliquota_interna_pb: 20,
+    ...medNegativaMva
+  },
+  {
+    ncm: "3003",
+    cest: "13.004.02",
+    descricao: "Outros tipos de medicamentos - neutra, exceto para uso veterinário",
+    aliquota_interna_pb: 20,
+    ...medNeutraMva
+  },
+  {
+    ncm: "3004",
+    cest: "13.004.02",
+    descricao: "Outros tipos de medicamentos - neutra, exceto para uso veterinário",
+    aliquota_interna_pb: 20,
+    ...medNeutraMva
+  },
+  {
+    ncm: "30066000",
+    cest: "13.005.00",
+    descricao: "Preparações químicas contraceptivas de referência - positiva",
+    aliquota_interna_pb: 20,
+    ...medPositivaMva
+  },
+  {
+    ncm: "30066000",
+    cest: "13.005.01",
+    descricao: "Preparações químicas contraceptivas de referência - negativa",
+    aliquota_interna_pb: 20,
+    ...medNegativaMva
+  },
+  {
+    ncm: "30066000",
+    cest: "13.005.02",
+    descricao: "Preparações químicas contraceptivas genérico - positiva",
+    aliquota_interna_pb: 20,
+    ...medPositivaMva
+  },
+  {
+    ncm: "30066000",
+    cest: "13.005.03",
+    descricao: "Preparações químicas contraceptivas genérico - negativa",
+    aliquota_interna_pb: 20,
+    ...medNegativaMva
+  },
+  {
+    ncm: "30066000",
+    cest: "13.005.04",
+    descricao: "Preparações químicas contraceptivas similar - positiva",
+    aliquota_interna_pb: 20,
+    ...medPositivaMva
+  },
+  {
+    ncm: "30066000",
+    cest: "13.005.05",
+    descricao: "Preparações químicas contraceptivas similar - negativa",
+    aliquota_interna_pb: 20,
+    ...medNegativaMva
+  },
+  {
+    ncm: "2936",
+    cest: "13.006.00",
+    descricao: "Provitaminas e vitaminas",
+    aliquota_interna_pb: 20,
+    ...medNeutraMva
+  },
   {
     ncm: "30021210",
     descricao: "Vacinas e Sangue",
@@ -1822,28 +2616,130 @@ export const anexoV = [
 
   // CEST 17. Alimentos
   {
-    ncm: "11010010",
-    descricao: "Trigo e Massas",
+    ncm: "0201",
+    cest: "17.001.00",
+    descricao: "Carne de gado bovino, fresca ou refrigerada",
     aliquota_interna_pb: 20,
-    ...bebidasMva
+    ...alimentos13Mva
+  },
+  {
+    ncm: "0202",
+    cest: "17.001.00",
+    descricao: "Carne de gado bovino, congelada",
+    aliquota_interna_pb: 20,
+    ...alimentos13Mva
+  },
+  {
+    ncm: "0203",
+    cest: "17.002.00",
+    descricao: "Carne de gado suíno, fresca, refrigerada ou congelada",
+    aliquota_interna_pb: 20,
+    ...alimentos13Mva
+  },
+  {
+    ncm: "0207",
+    cest: "17.003.00",
+    descricao: "Carnes e miudezas comestíveis, frescas, refrigeradas ou congeladas, das aves",
+    aliquota_interna_pb: 20,
+    ...alimentos13Mva
+  },
+  {
+    ncm: "0401",
+    cest: "17.011.00",
+    descricao: "Leite UHT (Ultra High Temperature)",
+    aliquota_interna_pb: 20,
+    ...alimentos20Mva
+  },
+  {
+    ncm: "0406",
+    cest: "17.016.00",
+    descricao: "Queijos",
+    aliquota_interna_pb: 20,
+    ...alimentos40Mva
+  },
+  {
+    ncm: "15079011",
+    cest: "17.020.00",
+    descricao: "Óleo de soja refinado",
+    aliquota_interna_pb: 20,
+    ...alimentos20Mva
+  },
+  {
+    ncm: "1601",
+    cest: "17.024.00",
+    descricao: "Enchidos (embutidos) e produtos semelhantes, de carne, de miudezas ou de sangue",
+    aliquota_interna_pb: 20,
+    ...alimentos40Mva
+  },
+  {
+    ncm: "1701",
+    cest: "17.027.00",
+    descricao: "Açúcar",
+    aliquota_interna_pb: 20,
+    ...alimentos20Mva
+  },
+  {
+    ncm: "1806",
+    cest: "17.031.00",
+    descricao: "Chocolate",
+    aliquota_interna_pb: 20,
+    ...alimentos40Mva
+  },
+  {
+    ncm: "19021",
+    cest: "17.046.00",
+    descricao: "Massas alimentícias, não cozidas, nem recheadas, nem preparadas de outro modo",
+    aliquota_interna_pb: 20,
+    ...alimentos20Mva
   },
   {
     ncm: "19023000",
-    descricao: "Trigo e Massas",
+    cest: "17.047.00",
+    descricao: "Outras massas alimentícias",
     aliquota_interna_pb: 20,
-    ...bebidasMva
-  },
-  {
-    ncm: "19052010",
-    descricao: "Biscoitos e Panetones",
-    aliquota_interna_pb: 20,
-    ...bebidasMva
+    ...alimentos20Mva
   },
   {
     ncm: "19053100",
-    descricao: "Biscoitos e Panetones",
+    cest: "17.052.00",
+    descricao: "Biscoitos e bolachas",
     aliquota_interna_pb: 20,
-    ...bebidasMva
+    ...alimentos20Mva
+  },
+  {
+    ncm: "20029090",
+    cest: "17.056.00",
+    descricao: "Extrato de tomate",
+    aliquota_interna_pb: 20,
+    ...alimentos40Mva
+  },
+  {
+    ncm: "21011",
+    cest: "17.064.00",
+    descricao: "Café torrado e moído",
+    aliquota_interna_pb: 20,
+    ...alimentos20Mva
+  },
+  {
+    ncm: "21032010",
+    cest: "17.078.00",
+    descricao: "Molho de tomate",
+    aliquota_interna_pb: 20,
+    ...alimentos40Mva
+  },
+  {
+    ncm: "21041011",
+    cest: "17.083.00",
+    descricao: "Caldos e sopas preparados",
+    aliquota_interna_pb: 20,
+    ...alimentos40Mva
+  },
+  {
+    ncm: "22029900",
+    cest: "17.096.00",
+    descricao: "Néctares de frutas",
+    aliquota_interna_pb: 20,
+    ...alimentos40Mva
   },
 
   // CEST 12 e 21. Materiais Elétricos e Eletrônicos
@@ -1851,153 +2747,258 @@ export const anexoV = [
     ncm: "85392110",
     descricao: "Lâmpadas e Reatores",
     aliquota_interna_pb: 20,
-    ...bebidasMva
+    ...lampadasMva
   },
   {
     ncm: "85392190",
     descricao: "Lâmpadas e Reatores",
     aliquota_interna_pb: 20,
-    ...bebidasMva
+    ...lampadasMva
   },
   {
     ncm: "85393100",
     descricao: "Lâmpadas e Reatores",
     aliquota_interna_pb: 20,
-    ...bebidasMva
+    ...lampadasMva
   },
   {
     ncm: "85395200",
     descricao: "Lâmpadas e Reatores",
     aliquota_interna_pb: 20,
-    ...bebidasMva
+    ...lampadasMva
   },
 
   // CEST 20. Perfumaria e Higiene Pessoal
   {
-    ncm: "3306.10.00",
+    ncm: "33030010",
+    cest: "20.001.00",
+    descricao: "Perfumes (extratos)",
+    aliquota_interna_pb: 20,
+    ...medNeutraMva
+  },
+  {
+    ncm: "33030020",
+    cest: "20.002.00",
+    descricao: "Águas-de-colônia",
+    aliquota_interna_pb: 20,
+    ...medNeutraMva
+  },
+  {
+    ncm: "33041000",
+    cest: "20.003.00",
+    descricao: "Produtos de maquiagem para os lábios",
+    aliquota_interna_pb: 20,
+    ...medNeutraMva
+  },
+  {
+    ncm: "33042010",
+    cest: "20.004.00",
+    descricao: "Sombra, delineador, lápis para sobrancelhas e rímel",
+    aliquota_interna_pb: 20,
+    ...medNeutraMva
+  },
+  {
+    ncm: "33042090",
+    cest: "20.004.00",
+    descricao: "Sombra, delineador, lápis para sobrancelhas e rímel",
+    aliquota_interna_pb: 20,
+    ...medNeutraMva
+  },
+  {
+    ncm: "33043000",
+    cest: "20.005.00",
+    descricao: "Preparações para manicuros e pedicuros",
+    aliquota_interna_pb: 20,
+    ...medNeutraMva
+  },
+  {
+    ncm: "33049100",
+    cest: "20.006.00",
+    descricao: "Pós, incluídos os compactos, para maquiagem",
+    aliquota_interna_pb: 20,
+    ...medNeutraMva
+  },
+  {
+    ncm: "33049910",
+    cest: "20.007.00",
+    descricao: "Cremes de beleza, cremes nutritivos e loções tônicas",
+    aliquota_interna_pb: 20,
+    ...medNeutraMva
+  },
+  {
+    ncm: "33049990",
+    cest: "20.008.00",
+    descricao: "Outros produtos de maquiagem e de cuidado da pele",
+    aliquota_interna_pb: 20,
+    ...medNeutraMva
+  },
+  {
+    ncm: "33051000",
+    cest: "20.009.00",
+    descricao: "Xampus para o cabelo",
+    aliquota_interna_pb: 20,
+    ...medNeutraMva
+  },
+  {
+    ncm: "33052000",
+    cest: "20.010.00",
+    descricao: "Preparações para ondulação ou alisamento, permanentes, dos cabelos",
+    aliquota_interna_pb: 20,
+    ...medNeutraMva
+  },
+  {
+    ncm: "33053000",
+    cest: "20.011.00",
+    descricao: "Laquês para o cabelo",
+    aliquota_interna_pb: 20,
+    ...medNeutraMva
+  },
+  {
+    ncm: "33059000",
+    cest: "20.012.00",
+    descricao: "Outras preparações capilares",
+    aliquota_interna_pb: 20,
+    ...medNeutraMva
+  },
+  {
+    ncm: "33061000",
     cest: "20.023.00",
     descricao: "Dentifrícios",
     aliquota_interna_pb: 20,
-    com_fidelidade: {
-      interno: 33.05,
-      inter_4: 59.66,
-      inter_7: 54.67,
-      inter_12: 46.36
-    },
-    sem_fidelidade: {
-      interno: 33.05,
-      inter_4: 59.66,
-      inter_7: 54.67,
-      inter_12: 46.36
-    }
+    ...medNegativaMva
   },
   {
-    ncm: "3923.30.90",
+    ncm: "33062000",
+    cest: "20.024.00",
+    descricao: "Fios utilizados para limpar os espaços interdentais (fios dentais)",
+    aliquota_interna_pb: 20,
+    ...medNegativaMva
+  },
+  {
+    ncm: "33069000",
+    cest: "20.025.00",
+    descricao: "Outras preparações para higiene bucal ou dentária",
+    aliquota_interna_pb: 20,
+    ...medNegativaMva
+  },
+  {
+    ncm: "33071000",
+    cest: "20.026.00",
+    descricao: "Preparações para barbear (antes, durante ou após)",
+    aliquota_interna_pb: 20,
+    ...medNeutraMva
+  },
+  {
+    ncm: "33072010",
+    cest: "20.027.00",
+    descricao: "Desodorantes (desodorizantes) corporais e antiperspirantes, líquidos",
+    aliquota_interna_pb: 20,
+    ...medNeutraMva
+  },
+  {
+    ncm: "33072090",
+    cest: "20.028.00",
+    descricao: "Outros desodorantes (desodorizantes) corporais e antiperspirantes",
+    aliquota_interna_pb: 20,
+    ...medNeutraMva
+  },
+  {
+    ncm: "33073000",
+    cest: "20.029.00",
+    descricao: "Sais perfumados e outras preparações para banhos",
+    aliquota_interna_pb: 20,
+    ...medNeutraMva
+  },
+  {
+    ncm: "34011190",
+    cest: "20.031.00",
+    descricao: "Sabonetes de toucador em barras, pedaços ou figuras moldados",
+    aliquota_interna_pb: 20,
+    ...medNegativaMva
+  },
+  {
+    ncm: "34011190",
+    cest: "20.032.00",
+    descricao: "Outros sabonetes, exceto de toucador em barras, pedaços ou figuras moldados",
+    aliquota_interna_pb: 20,
+    ...medNegativaMva
+  },
+  {
+    ncm: "34012010",
+    cest: "20.033.00",
+    descricao: "Sabonetes de toucador sob outras formas",
+    aliquota_interna_pb: 20,
+    ...medNegativaMva
+  },
+  {
+    ncm: "34013000",
+    cest: "20.035.00",
+    descricao: "Produtos e preparações orgânicos tensoativos para lavagem da pele, líquidos ou em creme",
+    aliquota_interna_pb: 20,
+    ...medNegativaMva
+  },
+  {
+    ncm: "39233090",
     cest: "20.063.00",
     descricao: "Mamadeiras",
     aliquota_interna_pb: 20,
-    com_fidelidade: {
-      interno: 67.96,
-      inter_4: 101.55,
-      inter_7: 95.25,
-      inter_12: 84.76
-    },
-    sem_fidelidade: {
-      interno: 67.96,
-      inter_4: 101.55,
-      inter_7: 95.25,
-      inter_12: 84.76
-    }
+    ...higienePessoalMva
   },
   {
-    ncm: "3924.10.00",
+    ncm: "39241000",
     cest: "20.063.00",
     descricao: "Mamadeiras",
     aliquota_interna_pb: 20,
-    com_fidelidade: {
-      interno: 67.96,
-      inter_4: 101.55,
-      inter_7: 95.25,
-      inter_12: 84.76
-    },
-    sem_fidelidade: {
-      interno: 67.96,
-      inter_4: 101.55,
-      inter_7: 95.25,
-      inter_12: 84.76
-    }
+    ...higienePessoalMva
   },
   {
-    ncm: "3924.90.00",
+    ncm: "39249000",
     cest: "20.063.00",
     descricao: "Mamadeiras",
     aliquota_interna_pb: 20,
-    com_fidelidade: {
-      interno: 67.96,
-      inter_4: 101.55,
-      inter_7: 95.25,
-      inter_12: 84.76
-    },
-    sem_fidelidade: {
-      interno: 67.96,
-      inter_4: 101.55,
-      inter_7: 95.25,
-      inter_12: 84.76
-    }
+    ...higienePessoalMva
   },
   {
-    ncm: "4014.90.90",
+    ncm: "40149090",
     cest: "20.063.00",
     descricao: "Mamadeiras",
     aliquota_interna_pb: 20,
-    com_fidelidade: {
-      interno: 67.96,
-      inter_4: 101.55,
-      inter_7: 95.25,
-      inter_12: 84.76
-    },
-    sem_fidelidade: {
-      interno: 67.96,
-      inter_4: 101.55,
-      inter_7: 95.25,
-      inter_12: 84.76
-    }
+    ...higienePessoalMva
   },
   {
-    ncm: "7013",
+    ncm: "70133700",
     cest: "20.063.00",
     descricao: "Mamadeiras",
     aliquota_interna_pb: 20,
-    com_fidelidade: {
-      interno: 67.96,
-      inter_4: 101.55,
-      inter_7: 95.25,
-      inter_12: 84.76
-    },
-    sem_fidelidade: {
-      interno: 67.96,
-      inter_4: 101.55,
-      inter_7: 95.25,
-      inter_12: 84.76
-    }
+    ...higienePessoalMva
   },
   {
-    ncm: "8212.10.20",
+    ncm: "39249000",
+    cest: "20.064.00",
+    descricao: "Chupetas e bicos para mamadeiras e para chupetas, de silicone",
+    aliquota_interna_pb: 20,
+    ...higienePessoalMva
+  },
+  {
+    ncm: "40149090",
+    cest: "20.064.00",
+    descricao: "Chupetas e bicos para mamadeiras e para chupetas, de borracha",
+    aliquota_interna_pb: 20,
+    ...higienePessoalMva
+  },
+  {
+    ncm: "82121020",
     cest: "20.064.00",
     descricao: "Aparelhos e lâminas de barbear",
     aliquota_interna_pb: 20,
-    com_fidelidade: {
-      interno: 30.00,
-      inter_4: 56.00,
-      inter_7: 51.13,
-      inter_12: 43.00
-    },
-    sem_fidelidade: {
-      interno: 30.00,
-      inter_4: 56.00,
-      inter_7: 51.13,
-      inter_12: 43.00
-    }
+    ...higienePessoalMva
+  },
+  {
+    ncm: "96032100",
+    cest: "20.064.00",
+    descricao: "Escovas de dentes",
+    aliquota_interna_pb: 20,
+    ...higienePessoalMva
   },
   {
     ncm: "8212.20.10",
@@ -2016,5 +3017,631 @@ export const anexoV = [
       inter_7: 51.13,
       inter_12: 43.00
     }
+  },
+
+  // CEST 07. Energia Elétrica
+  {
+    ncm: "2716.00.00",
+    cest: "07.001.00",
+    descricao: "Energia elétrica",
+    aliquota_interna_pb: 20,
+    ...veiculosMva
+  },
+
+  // CEST 09. Lâmpadas, reatores e “starter”
+  {
+    ncm: "8539",
+    cest: "09.001.00",
+    descricao: "Lâmpadas elétricas",
+    aliquota_interna_pb: 20,
+    ...lampadasMva
+  },
+  {
+    ncm: "8540",
+    cest: "09.002.20",
+    descricao: "Lâmpadas eletrônicas",
+    aliquota_interna_pb: 20,
+    ...lampadasMva
+  },
+  {
+    ncm: "8504.10.00",
+    cest: "09.003.00",
+    descricao: "Reatores para lâmpadas ou tubos de descargas",
+    aliquota_interna_pb: 20,
+    ...lampadasMva
+  },
+  {
+    ncm: "8536.50",
+    cest: "09.004.00",
+    descricao: "“Starter”",
+    aliquota_interna_pb: 20,
+    ...lampadasMva
+  },
+  {
+    ncm: "8539.52.00",
+    cest: "09.005.00",
+    descricao: "Lâmpadas de LED (Diodos Emissores de Luz)",
+    aliquota_interna_pb: 20,
+    ...lampadasMva
+  },
+
+  // CEST 16. Pneumáticos, câmaras de ar e protetores de borracha
+  {
+    ncm: "4011.10.00",
+    cest: "16.001.00",
+    descricao: "Pneus novos, dos tipos utilizados em automóveis de passageiros",
+    aliquota_interna_pb: 20,
+    ...pneusMva
+  },
+  {
+    ncm: "4011",
+    cest: "16.002.00",
+    descricao: "Pneus novos, dos tipos utilizados em caminhões, ônibus, aviões, máquinas",
+    aliquota_interna_pb: 20,
+    ...pneusMva
+  },
+  {
+    ncm: "4011.40.00",
+    cest: "16.003.00",
+    descricao: "Pneus novos para motocicletas",
+    aliquota_interna_pb: 20,
+    ...pneusMotoMva
+  },
+  {
+    ncm: "4011",
+    cest: "16.004.00",
+    descricao: "Outros tipos de pneus novos",
+    aliquota_interna_pb: 20,
+    ...pneusOutrosMva
+  },
+  {
+    ncm: "4012.90",
+    cest: "16.007.00",
+    descricao: "Protetores de borracha",
+    aliquota_interna_pb: 20,
+    ...pneusOutrosMva
+  },
+  {
+    ncm: "4013",
+    cest: "16.008.00",
+    descricao: "Câmaras de ar de borracha",
+    aliquota_interna_pb: 20,
+    ...pneusOutrosMva
+  },
+
+  // CEST 22. Rações para animais domésticos
+  {
+    ncm: "2309",
+    cest: "22.001.00",
+    descricao: "Ração tipo “pet” para animais domésticos",
+    aliquota_interna_pb: 20,
+    com_fidelidade: {
+      interno: 46,
+      inter_4: 75.20,
+      inter_7: 69.73,
+      inter_12: 60.60
+    },
+    sem_fidelidade: {
+      interno: 46,
+      inter_4: 75.20,
+      inter_7: 69.73,
+      inter_12: 60.60
+    }
+  },
+
+  // CEST 23. Sorvetes e preparados para fabricação de sorvetes em máquinas
+  {
+    ncm: "2105.00",
+    cest: "23.001.00",
+    descricao: "Sorvetes de qualquer espécie",
+    aliquota_interna_pb: 20,
+    com_fidelidade: {
+      interno: 70,
+      inter_4: 104,
+      inter_7: 97.63,
+      inter_12: 87
+    },
+    sem_fidelidade: {
+      interno: 70,
+      inter_4: 104,
+      inter_7: 97.63,
+      inter_12: 87
+    }
+  },
+  {
+    ncm: "1806",
+    cest: "23.002.00",
+    descricao: "Preparados para fabricação de sorvete em máquina",
+    aliquota_interna_pb: 20,
+    com_fidelidade: {
+      interno: 328,
+      inter_4: 413.60,
+      inter_7: 397.55,
+      inter_12: 370.80
+    },
+    sem_fidelidade: {
+      interno: 328,
+      inter_4: 413.60,
+      inter_7: 397.55,
+      inter_12: 370.80
+    }
+  },
+  {
+    ncm: "1901",
+    cest: "23.002.00",
+    descricao: "Preparados para fabricação de sorvete em máquina",
+    aliquota_interna_pb: 20,
+    com_fidelidade: {
+      interno: 328,
+      inter_4: 413.60,
+      inter_7: 397.55,
+      inter_12: 370.80
+    },
+    sem_fidelidade: {
+      interno: 328,
+      inter_4: 413.60,
+      inter_7: 397.55,
+      inter_12: 370.80
+    }
+  },
+  {
+    ncm: "2106",
+    cest: "23.002.00",
+    descricao: "Preparados para fabricação de sorvete em máquina",
+    aliquota_interna_pb: 20,
+    com_fidelidade: {
+      interno: 328,
+      inter_4: 413.60,
+      inter_7: 397.55,
+      inter_12: 370.80
+    },
+    sem_fidelidade: {
+      interno: 328,
+      inter_4: 413.60,
+      inter_7: 397.55,
+      inter_12: 370.80
+    }
+  },
+  {
+    ncm: "0404",
+    cest: "23.002.00",
+    descricao: "Preparados para fabricação de sorvete em máquina",
+    aliquota_interna_pb: 20,
+    com_fidelidade: {
+      interno: 328,
+      inter_4: 413.60,
+      inter_7: 397.55,
+      inter_12: 370.80
+    },
+    sem_fidelidade: {
+      interno: 328,
+      inter_4: 413.60,
+      inter_7: 397.55,
+      inter_12: 370.80
+    }
+  },
+
+  // CEST 24. Tintas e vernizes
+  {
+    ncm: "3208",
+    cest: "24.001.00",
+    descricao: "Tintas, vernizes",
+    aliquota_interna_pb: 20,
+    com_fidelidade: {
+      interno: 35,
+      inter_4: 62,
+      inter_7: 56.94,
+      inter_12: 48.50
+    },
+    sem_fidelidade: {
+      interno: 35,
+      inter_4: 62,
+      inter_7: 56.94,
+      inter_12: 48.50
+    }
+  },
+  {
+    ncm: "3209",
+    cest: "24.001.00",
+    descricao: "Tintas, vernizes",
+    aliquota_interna_pb: 20,
+    com_fidelidade: {
+      interno: 35,
+      inter_4: 62,
+      inter_7: 56.94,
+      inter_12: 48.50
+    },
+    sem_fidelidade: {
+      interno: 35,
+      inter_4: 62,
+      inter_7: 56.94,
+      inter_12: 48.50
+    }
+  },
+  {
+    ncm: "3210.00",
+    cest: "24.001.00",
+    descricao: "Tintas, vernizes",
+    aliquota_interna_pb: 20,
+    com_fidelidade: {
+      interno: 35,
+      inter_4: 62,
+      inter_7: 56.94,
+      inter_12: 48.50
+    },
+    sem_fidelidade: {
+      interno: 35,
+      inter_4: 62,
+      inter_7: 56.94,
+      inter_12: 48.50
+    }
+  },
+  {
+    ncm: "2821",
+    cest: "24.002.00",
+    descricao: "Xadrez e pós assemelhados",
+    aliquota_interna_pb: 20,
+    com_fidelidade: {
+      interno: 35,
+      inter_4: 62,
+      inter_7: 56.94,
+      inter_12: 48.50
+    },
+    sem_fidelidade: {
+      interno: 35,
+      inter_4: 62,
+      inter_7: 56.94,
+      inter_12: 48.50
+    }
+  },
+  {
+    ncm: "3204.17.00",
+    cest: "24.002.00",
+    descricao: "Xadrez e pós assemelhados",
+    aliquota_interna_pb: 20,
+    com_fidelidade: {
+      interno: 35,
+      inter_4: 62,
+      inter_7: 56.94,
+      inter_12: 48.50
+    },
+    sem_fidelidade: {
+      interno: 35,
+      inter_4: 62,
+      inter_7: 56.94,
+      inter_12: 48.50
+    }
+  },
+  {
+    ncm: "3206",
+    cest: "24.002.00",
+    descricao: "Xadrez e pós assemelhados",
+    aliquota_interna_pb: 20,
+    com_fidelidade: {
+      interno: 35,
+      inter_4: 62,
+      inter_7: 56.94,
+      inter_12: 48.50
+    },
+    sem_fidelidade: {
+      interno: 35,
+      inter_4: 62,
+      inter_7: 56.94,
+      inter_12: 48.50
+    }
+  },
+  {
+    ncm: "3204",
+    cest: "24.003.00",
+    descricao: "Corantes para aplicação em bases, tintas e vernizes",
+    aliquota_interna_pb: 20,
+    com_fidelidade: {
+      interno: 50,
+      inter_4: 80,
+      inter_7: 74.38,
+      inter_12: 65
+    },
+    sem_fidelidade: {
+      interno: 50,
+      inter_4: 80,
+      inter_7: 74.38,
+      inter_12: 65
+    }
+  },
+  {
+    ncm: "3205.00.00",
+    cest: "24.003.00",
+    descricao: "Corantes para aplicação em bases, tintas e vernizes",
+    aliquota_interna_pb: 20,
+    com_fidelidade: {
+      interno: 50,
+      inter_4: 80,
+      inter_7: 74.38,
+      inter_12: 65
+    },
+    sem_fidelidade: {
+      interno: 50,
+      inter_4: 80,
+      inter_7: 74.38,
+      inter_12: 65
+    }
+  },
+  {
+    ncm: "3206",
+    cest: "24.003.00",
+    descricao: "Corantes para aplicação em bases, tintas e vernizes",
+    aliquota_interna_pb: 20,
+    com_fidelidade: {
+      interno: 50,
+      inter_4: 80,
+      inter_7: 74.38,
+      inter_12: 65
+    },
+    sem_fidelidade: {
+      interno: 50,
+      inter_4: 80,
+      inter_7: 74.38,
+      inter_12: 65
+    }
+  },
+  {
+    ncm: "3212",
+    cest: "24.003.00",
+    descricao: "Corantes para aplicação em bases, tintas e vernizes",
+    aliquota_interna_pb: 20,
+    com_fidelidade: {
+      interno: 50,
+      inter_4: 80,
+      inter_7: 74.38,
+      inter_12: 65
+    },
+    sem_fidelidade: {
+      interno: 50,
+      inter_4: 80,
+      inter_7: 74.38,
+      inter_12: 65
+    }
+  },
+
+  // CEST 25. Veículos automotores
+  {
+    ncm: "8702.10.00",
+    cest: "25.001.00",
+    descricao: "Veículos automóveis para transporte de 10 pessoas ou mais",
+    aliquota_interna_pb: 20,
+    ...veiculosMva
+  },
+  {
+    ncm: "8702.40.90",
+    cest: "25.002.00",
+    descricao: "Veículos automóveis para transporte de 10 pessoas ou mais, unicamente com motor elétrico",
+    aliquota_interna_pb: 20,
+    ...veiculosMva
+  },
+  {
+    ncm: "8703.21.00",
+    cest: "25.003.00",
+    descricao: "Automóveis unicamente com motor de pistão alternativo de ignição por centelha",
+    aliquota_interna_pb: 20,
+    ...veiculosMva
+  },
+  {
+    ncm: "8703.22.10",
+    cest: "25.004.00",
+    descricao: "Automóveis unicamente com motor de pistão alternativo de ignição por centelha",
+    aliquota_interna_pb: 20,
+    ...veiculosMva
+  },
+  {
+    ncm: "8703.22.90",
+    cest: "25.005.00",
+    descricao: "Outros automóveis unicamente com motor de pistão alternativo de ignição por centelha",
+    aliquota_interna_pb: 20,
+    ...veiculosMva
+  },
+  {
+    ncm: "8703.23.10",
+    cest: "25.006.00",
+    descricao: "Automóveis unicamente com motor de pistão alternativo de ignição por centelha",
+    aliquota_interna_pb: 20,
+    ...veiculosMva
+  },
+  {
+    ncm: "8703.23.90",
+    cest: "25.007.00",
+    descricao: "Outros automóveis unicamente com motor de pistão alternativo de ignição por centelha",
+    aliquota_interna_pb: 20,
+    ...veiculosMva
+  },
+  {
+    ncm: "8703.24.10",
+    cest: "25.008.00",
+    descricao: "Automóveis unicamente com motor de pistão alternativo de ignição por centelha",
+    aliquota_interna_pb: 20,
+    ...veiculosMva
+  },
+  {
+    ncm: "8703.24.90",
+    cest: "25.009.00",
+    descricao: "Outros automóveis unicamente com motor de pistão alternativo de ignição por centelha",
+    aliquota_interna_pb: 20,
+    ...veiculosMva
+  },
+  {
+    ncm: "8703.32.10",
+    cest: "25.010.00",
+    descricao: "Automóveis unicamente com motor diesel ou semidiesel",
+    aliquota_interna_pb: 20,
+    ...veiculosMva
+  },
+  {
+    ncm: "8703.32.90",
+    cest: "25.011.00",
+    descricao: "Outros automóveis unicamente com motor diesel ou semidiesel",
+    aliquota_interna_pb: 20,
+    ...veiculosMva
+  },
+  {
+    ncm: "8703.33.10",
+    cest: "25.012.00",
+    descricao: "Automóveis unicamente com motor diesel ou semidiesel",
+    aliquota_interna_pb: 20,
+    ...veiculosMva
+  },
+  {
+    ncm: "8703.33.90",
+    cest: "25.013.00",
+    descricao: "Outros automóveis unicamente com motor diesel ou semidiesel",
+    aliquota_interna_pb: 20,
+    ...veiculosMva
+  },
+  {
+    ncm: "8704.21.10",
+    cest: "25.014.00",
+    descricao: "Veículos automóveis para transporte de mercadorias",
+    aliquota_interna_pb: 20,
+    ...veiculosMva
+  },
+  {
+    ncm: "8704.21.20",
+    cest: "25.015.00",
+    descricao: "Veículos automóveis para transporte de mercadorias",
+    aliquota_interna_pb: 20,
+    ...veiculosMva
+  },
+  {
+    ncm: "8704.21.30",
+    cest: "25.016.00",
+    descricao: "Veículos automóveis para transporte de mercadorias",
+    aliquota_interna_pb: 20,
+    ...veiculosMva
+  },
+  {
+    ncm: "8704.21.90",
+    cest: "25.017.00",
+    descricao: "Outros veículos",
+    aliquota_interna_pb: 20,
+    ...veiculosMva
+  },
+  {
+    ncm: "8704.31.10",
+    cest: "25.018.00",
+    descricao: "Veículos automóveis para transporte de mercadorias",
+    aliquota_interna_pb: 20,
+    ...veiculosMva
+  },
+  {
+    ncm: "8704.31.20",
+    cest: "25.019.00",
+    descricao: "Veículos automóveis para transporte de mercadorias",
+    aliquota_interna_pb: 20,
+    ...veiculosMva
+  },
+  {
+    ncm: "8704.31.30",
+    cest: "25.020.00",
+    descricao: "Veículos automóveis para transporte de mercadorias",
+    aliquota_interna_pb: 20,
+    ...veiculosMva
+  },
+  {
+    ncm: "8704.31.90",
+    cest: "25.021.00",
+    descricao: "Outros veículos",
+    aliquota_interna_pb: 20,
+    ...veiculosMva
+  },
+  {
+    ncm: "8702.20.00",
+    cest: "25.022.00",
+    descricao: "Veículos automóveis para transporte de 10 pessoas ou mais",
+    aliquota_interna_pb: 20,
+    ...veiculosMva
+  },
+  {
+    ncm: "8702.30.00",
+    cest: "25.023.00",
+    descricao: "Veículos automóveis para transporte de 10 pessoas ou mais",
+    aliquota_interna_pb: 20,
+    ...veiculosMva
+  },
+  {
+    ncm: "8702.90.00",
+    cest: "25.024.00",
+    descricao: "Outros veículos automóveis para transporte de 10 pessoas ou mais",
+    aliquota_interna_pb: 20,
+    ...veiculosMva
+  },
+  {
+    ncm: "8703.40.00",
+    cest: "25.025.00",
+    descricao: "Automóveis equipados para propulsão, simultaneamente, com um motor de pistão alternativo",
+    aliquota_interna_pb: 20,
+    ...veiculosMva
+  },
+  {
+    ncm: "8703.50.00",
+    cest: "25.026.00",
+    descricao: "Automóveis equipados para propulsão, simultaneamente, com um motor de pistão por compressão",
+    aliquota_interna_pb: 20,
+    ...veiculosMva
+  },
+  {
+    ncm: "8703.60.00",
+    cest: "25.027.00",
+    descricao: "Automóveis equipados para propulsão, simultaneamente, com um motor de pistão alternativo",
+    aliquota_interna_pb: 20,
+    ...veiculosMva
+  },
+  {
+    ncm: "8703.70.00",
+    cest: "25.028.00",
+    descricao: "Automóveis equipados para propulsão, simultaneamente, com um motor de pistão por compressão",
+    aliquota_interna_pb: 20,
+    ...veiculosMva
+  },
+  {
+    ncm: "8703.80.00",
+    cest: "25.029.00",
+    descricao: "Outros veículos, equipados unicamente com motor elétrico para propulsão",
+    aliquota_interna_pb: 20,
+    ...veiculosMva
+  },
+  {
+    ncm: "8704.41.00",
+    cest: "25.030.00",
+    descricao: "Outros veículos para transportes de mercadorias",
+    aliquota_interna_pb: 20,
+    ...veiculosMva
+  },
+  {
+    ncm: "8704.51.00",
+    cest: "25.031.00",
+    descricao: "Outros veículos para transportes de mercadorias",
+    aliquota_interna_pb: 20,
+    ...veiculosMva
+  },
+  {
+    ncm: "8704.60.00",
+    cest: "25.032.00",
+    descricao: "Outros veículos para transporte de mercadorias, unicamente com motor elétrico",
+    aliquota_interna_pb: 20,
+    ...veiculosMva
+  },
+
+  // CEST 26. Veículos de duas e três rodas motorizados
+  {
+    ncm: "8711",
+    cest: "26.001.00",
+    descricao: "Motocicletas (incluídos os ciclomotores) e outros ciclos equipados com motor auxiliar",
+    aliquota_interna_pb: 20,
+    ...motosMva
+  },
+  {
+    ncm: "8711",
+    cest: "26.001.01",
+    descricao: "Bicicletas e outros ciclos (incluídos os triciclos) com propulsão de motor elétrico",
+    aliquota_interna_pb: 20,
+    ...motosMva
   }
 ];
