@@ -8,11 +8,12 @@ import Navigation from './components/Navigation';
 import XmlAnalysis from './views/XmlAnalysis';
 import SpedAnalysis from './views/SpedAnalysis';
 import ZipAnalysis from './views/ZipAnalysis';
+import StVerification from './views/StVerification';
 import { FileSearch, AlertCircle, Calculator, Sun, Moon, HelpCircle } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 
 export default function App() {
-  const [view, setView] = useState<'search' | 'xml' | 'sped' | 'zip'>('search');
+  const [view, setView] = useState<'search' | 'xml' | 'sped' | 'zip' | 'st-batch'>('search');
   const [ncmSearch, setNcmSearch] = useState('');
   const [cestSearch, setCestSearch] = useState('');
   const [descSearch, setDescSearch] = useState('');
@@ -58,8 +59,14 @@ export default function App() {
     if (!ncmSearch && !descSearch && !cestSearch) return [];
 
     return anexoV.filter((item: any) => {
-      const matchNcm = ncmSearch ? item.ncm.replace(/\D/g, '').startsWith(ncmSearch.replace(/\D/g, '')) : true;
-      const matchCest = cestSearch ? (item.cest || '').replace(/\D/g, '').startsWith(cestSearch.replace(/\D/g, '')) : true;
+      const cleanSearch = ncmSearch.replace(/\D/g, '');
+      const cleanItem = item.ncm.replace(/\D/g, '');
+      const matchNcm = ncmSearch ? (cleanItem.startsWith(cleanSearch) || cleanSearch.startsWith(cleanItem)) : true;
+      
+      const cleanCestSearch = cestSearch.replace(/\D/g, '');
+      const cleanCestItem = (item.cest || '').replace(/\D/g, '');
+      const matchCest = cestSearch ? (cleanCestItem.startsWith(cleanCestSearch) || cleanCestSearch.startsWith(cleanCestItem)) : true;
+      
       const matchDesc = descSearch ? item.descricao.toLowerCase().includes(descSearch.toLowerCase()) : true;
       return matchNcm && matchCest && matchDesc;
     });
@@ -111,6 +118,8 @@ export default function App() {
           <SpedAnalysis />
         ) : view === 'zip' ? (
           <ZipAnalysis />
+        ) : view === 'st-batch' ? (
+          <StVerification />
         ) : (
           <div className="space-y-6">
             <SearchBar 

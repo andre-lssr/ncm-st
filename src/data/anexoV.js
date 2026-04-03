@@ -45,7 +45,105 @@ export const anexoV = [
     ...autopeçasMva
   },
   {
-    ncm: "3917",
+    ncm: "39172100",
+    cest: "01.007.00",
+    descricao: "Tubos e seus acessórios (por exemplo: juntas, cotovelos, flanges, uniões), de plásticos",
+    aliquota_interna_pb: 20,
+    ...autopeçasMva
+  },
+  {
+    ncm: "39172200",
+    cest: "01.007.00",
+    descricao: "Tubos e seus acessórios (por exemplo: juntas, cotovelos, flanges, uniões), de plásticos",
+    aliquota_interna_pb: 20,
+    ...autopeçasMva
+  },
+  {
+    ncm: "39172300",
+    cest: "01.007.00",
+    descricao: "Tubos e seus acessórios (por exemplo: juntas, cotovelos, flanges, uniões), de plásticos",
+    aliquota_interna_pb: 20,
+    ...autopeçasMva
+  },
+  {
+    ncm: "39172900",
+    cest: "01.007.00",
+    descricao: "Tubos e seus acessórios (por exemplo: juntas, cotovelos, flanges, uniões), de plásticos",
+    aliquota_interna_pb: 20,
+    ...autopeçasMva
+  },
+  {
+    ncm: "39173100",
+    cest: "01.007.00",
+    descricao: "Tubos e seus acessórios (por exemplo: juntas, cotovelos, flanges, uniões), de plásticos",
+    aliquota_interna_pb: 20,
+    ...autopeçasMva
+  },
+  {
+    ncm: "39173210",
+    cest: "01.007.00",
+    descricao: "Tubos e seus acessórios (por exemplo: juntas, cotovelos, flanges, uniões), de plásticos",
+    aliquota_interna_pb: 20,
+    ...autopeçasMva
+  },
+  {
+    ncm: "39173221",
+    cest: "01.007.00",
+    descricao: "Tubos e seus acessórios (por exemplo: juntas, cotovelos, flanges, uniões), de plásticos",
+    aliquota_interna_pb: 20,
+    ...autopeçasMva
+  },
+  {
+    ncm: "39173229",
+    cest: "01.007.00",
+    descricao: "Tubos e seus acessórios (por exemplo: juntas, cotovelos, flanges, uniões), de plásticos",
+    aliquota_interna_pb: 20,
+    ...autopeçasMva
+  },
+  {
+    ncm: "39173240",
+    cest: "01.007.00",
+    descricao: "Tubos e seus acessórios (por exemplo: juntas, cotovelos, flanges, uniões), de plásticos",
+    aliquota_interna_pb: 20,
+    ...autopeçasMva
+  },
+  {
+    ncm: "39173251",
+    cest: "01.007.00",
+    descricao: "Tubos e seus acessórios (por exemplo: juntas, cotovelos, flanges, uniões), de plásticos",
+    aliquota_interna_pb: 20,
+    ...autopeçasMva
+  },
+  {
+    ncm: "39173259",
+    cest: "01.007.00",
+    descricao: "Tubos e seus acessórios (por exemplo: juntas, cotovelos, flanges, uniões), de plásticos",
+    aliquota_interna_pb: 20,
+    ...autopeçasMva
+  },
+  {
+    ncm: "39173290",
+    cest: "01.007.00",
+    descricao: "Tubos e seus acessórios (por exemplo: juntas, cotovelos, flanges, uniões), de plásticos",
+    aliquota_interna_pb: 20,
+    ...autopeçasMva
+  },
+  {
+    ncm: "39173300",
+    cest: "01.007.00",
+    descricao: "Tubos e seus acessórios (por exemplo: juntas, cotovelos, flanges, uniões), de plásticos",
+    aliquota_interna_pb: 20,
+    ...autopeçasMva
+  },
+  {
+    ncm: "39173900",
+    cest: "01.007.00",
+    descricao: "Tubos e seus acessórios (por exemplo: juntas, cotovelos, flanges, uniões), de plásticos",
+    aliquota_interna_pb: 20,
+    ...autopeçasMva
+  },
+  {
+    ncm: "39174090",
     cest: "01.007.00",
     descricao: "Tubos e seus acessórios (por exemplo: juntas, cotovelos, flanges, uniões), de plásticos",
     aliquota_interna_pb: 20,
@@ -73,7 +171,49 @@ export const anexoV = [
     ...autopeçasMva
   },
   {
-    ncm: "4010.3",
+    ncm: "40103100",
+    cest: "01.004.00",
+    descricao: "Correias de transmissão de borracha vulcanizada",
+    aliquota_interna_pb: 20,
+    ...autopeçasMva
+  },
+  {
+    ncm: "40103200",
+    cest: "01.004.00",
+    descricao: "Correias de transmissão de borracha vulcanizada",
+    aliquota_interna_pb: 20,
+    ...autopeçasMva
+  },
+  {
+    ncm: "40103300",
+    cest: "01.004.00",
+    descricao: "Correias de transmissão de borracha vulcanizada",
+    aliquota_interna_pb: 20,
+    ...autopeçasMva
+  },
+  {
+    ncm: "40103400",
+    cest: "01.004.00",
+    descricao: "Correias de transmissão de borracha vulcanizada",
+    aliquota_interna_pb: 20,
+    ...autopeçasMva
+  },
+  {
+    ncm: "40103500",
+    cest: "01.004.00",
+    descricao: "Correias de transmissão de borracha vulcanizada",
+    aliquota_interna_pb: 20,
+    ...autopeçasMva
+  },
+  {
+    ncm: "40103600",
+    cest: "01.004.00",
+    descricao: "Correias de transmissão de borracha vulcanizada",
+    aliquota_interna_pb: 20,
+    ...autopeçasMva
+  },
+  {
+    ncm: "40103900",
     cest: "01.004.00",
     descricao: "Correias de transmissão de borracha vulcanizada",
     aliquota_interna_pb: 20,
@@ -93,7 +233,13 @@ export const anexoV = [
     ...autopeçasMva
   },
   {
-    ncm: "4823.90.9",
+    ncm: "48239091",
+    descricao: "Juntas, gaxetas e outros elementos com função semelhante de vedação",
+    aliquota_interna_pb: 20,
+    ...autopeçasMva
+  },
+  {
+    ncm: "48239099",
     descricao: "Juntas, gaxetas e outros elementos com função semelhante de vedação",
     aliquota_interna_pb: 20,
     ...autopeçasMva
@@ -134,7 +280,7 @@ export const anexoV = [
     ...autopeçasMva
   },
   {
-    ncm: "6306.1",
+    ncm: "63061000",
     cest: "01.012.00",
     descricao: "Encerados e toldos",
     aliquota_interna_pb: 20,
@@ -148,7 +294,28 @@ export const anexoV = [
     ...autopeçasMva
   },
   {
-    ncm: "6813",
+    ncm: "68132000",
+    cest: "01.014.00",
+    descricao: "Guarnições de fricção (por exemplo: placas, rolos, tiras, segmentos, discos, anéis, pastilhas)",
+    aliquota_interna_pb: 20,
+    ...autopeçasMva
+  },
+  {
+    ncm: "68138110",
+    cest: "01.014.00",
+    descricao: "Guarnições de fricção (por exemplo: placas, rolos, tiras, segmentos, discos, anéis, pastilhas)",
+    aliquota_interna_pb: 20,
+    ...autopeçasMva
+  },
+  {
+    ncm: "68138190",
+    cest: "01.014.00",
+    descricao: "Guarnições de fricção (por exemplo: placas, rolos, tiras, segmentos, discos, anéis, pastilhas)",
+    aliquota_interna_pb: 20,
+    ...autopeçasMva
+  },
+  {
+    ncm: "68138910",
     cest: "01.014.00",
     descricao: "Guarnições de fricção (por exemplo: placas, rolos, tiras, segmentos, discos, anéis, pastilhas)",
     aliquota_interna_pb: 20,
@@ -212,19 +379,19 @@ export const anexoV = [
     ...autopeçasMva
   },
   {
-    ncm: "8301.20",
+    ncm: "83012000",
     descricao: "Fechaduras e partes de fechaduras",
     aliquota_interna_pb: 20,
     ...autopeçasMva
   },
   {
-    ncm: "8301.60",
+    ncm: "83016000",
     descricao: "Fechaduras e partes de fechaduras",
     aliquota_interna_pb: 20,
     ...autopeçasMva
   },
   {
-    ncm: "8301.70",
+    ncm: "83017000",
     descricao: "Chaves apresentadas isoladamente",
     aliquota_interna_pb: 20,
     ...autopeçasMva
@@ -278,19 +445,19 @@ export const anexoV = [
     ...autopeçasMva
   },
   {
-    ncm: "8414.10.00",
+    ncm: "84149010",
     descricao: "Bombas de vácuo",
     aliquota_interna_pb: 20,
     ...autopeçasMva
   },
   {
-    ncm: "8414.80.1",
+    ncm: "84149031",
     descricao: "Compressores e turbocompressores de ar",
     aliquota_interna_pb: 20,
     ...autopeçasMva
   },
   {
-    ncm: "8414.80.2",
+    ncm: "84149039",
     descricao: "Compressores e turbocompressores de ar",
     aliquota_interna_pb: 20,
     ...autopeçasMva
@@ -302,7 +469,13 @@ export const anexoV = [
     ...autopeçasMva
   },
   {
-    ncm: "8415.20",
+    ncm: "84152010",
+    descricao: "Máquinas e aparelhos de ar condicionado",
+    aliquota_interna_pb: 20,
+    ...autopeçasMva
+  },
+  {
+    ncm: "84152090",
     descricao: "Máquinas e aparelhos de ar condicionado",
     aliquota_interna_pb: 20,
     ...autopeçasMva
@@ -467,7 +640,13 @@ export const anexoV = [
     ...autopeçasMva
   },
   {
-    ncm: "8525.50.1",
+    ncm: "85255011",
+    descricao: "Aparelhos transmissores de radiotelefonia ou radiotelegrafia",
+    aliquota_interna_pb: 20,
+    ...autopeçasMva
+  },
+  {
+    ncm: "85255019",
     descricao: "Aparelhos transmissores de radiotelefonia ou radiotelegrafia",
     aliquota_interna_pb: 20,
     ...autopeçasMva
@@ -539,7 +718,25 @@ export const anexoV = [
     ...autopeçasMva
   },
   {
-    ncm: "8538",
+    ncm: "85381000",
+    descricao: "Partes reconhecíveis como exclusivas ou principalmente destinados aos aparelhos",
+    aliquota_interna_pb: 20,
+    ...autopeçasMva
+  },
+  {
+    ncm: "85389010",
+    descricao: "Partes reconhecíveis como exclusivas ou principalmente destinados aos aparelhos",
+    aliquota_interna_pb: 20,
+    ...autopeçasMva
+  },
+  {
+    ncm: "85389020",
+    descricao: "Partes reconhecíveis como exclusivas ou principalmente destinados aos aparelhos",
+    aliquota_interna_pb: 20,
+    ...autopeçasMva
+  },
+  {
+    ncm: "85389090",
     descricao: "Partes reconhecíveis como exclusivas ou principalmente destinados aos aparelhos",
     aliquota_interna_pb: 20,
     ...autopeçasMva
@@ -623,7 +820,37 @@ export const anexoV = [
     ...autopeçasMva
   },
   {
-    ncm: "9032.89.2",
+    ncm: "90328921",
+    descricao: "Controladores eletrônicos",
+    aliquota_interna_pb: 20,
+    ...autopeçasMva
+  },
+  {
+    ncm: "90328922",
+    descricao: "Controladores eletrônicos",
+    aliquota_interna_pb: 20,
+    ...autopeçasMva
+  },
+  {
+    ncm: "90328923",
+    descricao: "Controladores eletrônicos",
+    aliquota_interna_pb: 20,
+    ...autopeçasMva
+  },
+  {
+    ncm: "90328924",
+    descricao: "Controladores eletrônicos",
+    aliquota_interna_pb: 20,
+    ...autopeçasMva
+  },
+  {
+    ncm: "90328925",
+    descricao: "Controladores eletrônicos",
+    aliquota_interna_pb: 20,
+    ...autopeçasMva
+  },
+  {
+    ncm: "90328929",
     descricao: "Controladores eletrônicos",
     aliquota_interna_pb: 20,
     ...autopeçasMva
@@ -677,13 +904,31 @@ export const anexoV = [
     ...autopeçasMva
   },
   {
-    ncm: "3919.10",
+    ncm: "39191010",
     descricao: "Fitas, tiras, adesivos, autocolantes, de plástico, refletores",
     aliquota_interna_pb: 20,
     ...autopeçasMva
   },
   {
-    ncm: "3919.90",
+    ncm: "39191020",
+    descricao: "Fitas, tiras, adesivos, autocolantes, de plástico, refletores",
+    aliquota_interna_pb: 20,
+    ...autopeçasMva
+  },
+  {
+    ncm: "39191090",
+    descricao: "Fitas, tiras, adesivos, autocolantes, de plástico, refletores",
+    aliquota_interna_pb: 20,
+    ...autopeçasMva
+  },
+  {
+    ncm: "39199010",
+    descricao: "Fitas, tiras, adesivos, autocolantes, de plástico, refletores",
+    aliquota_interna_pb: 20,
+    ...autopeçasMva
+  },
+  {
+    ncm: "39199090",
     descricao: "Fitas, tiras, adesivos, autocolantes, de plástico, refletores",
     aliquota_interna_pb: 20,
     ...autopeçasMva
@@ -876,7 +1121,25 @@ export const anexoV = [
     ...autopeçasMva
   },
   {
-    ncm: "8419.50",
+    ncm: "84195010",
+    descricao: "Trocadores de calor",
+    aliquota_interna_pb: 20,
+    ...autopeçasMva
+  },
+  {
+    ncm: "84195021",
+    descricao: "Trocadores de calor",
+    aliquota_interna_pb: 20,
+    ...autopeçasMva
+  },
+  {
+    ncm: "84195029",
+    descricao: "Trocadores de calor",
+    aliquota_interna_pb: 20,
+    ...autopeçasMva
+  },
+  {
+    ncm: "84195090",
     descricao: "Trocadores de calor",
     aliquota_interna_pb: 20,
     ...autopeçasMva
@@ -968,31 +1231,37 @@ export const anexoV = [
 
   // CEST 02. Bebidas alcoólicas
   {
-    ncm: "2205",
+    ncm: "22051000",
     descricao: "Aperitivos, amargos, bitter e similares",
     aliquota_interna_pb: 27,
     ...bebidasMva
   },
   {
-    ncm: "2208.90.00",
+    ncm: "22059000",
     descricao: "Aperitivos, amargos, bitter e similares",
     aliquota_interna_pb: 27,
     ...bebidasMva
   },
   {
-    ncm: "2208.90.00",
+    ncm: "22089000",
+    descricao: "Aperitivos, amargos, bitter e similares",
+    aliquota_interna_pb: 27,
+    ...bebidasMva
+  },
+  {
+    ncm: "22089000",
     descricao: "Batida e similares",
     aliquota_interna_pb: 27,
     ...bebidasMva
   },
   {
-    ncm: "2208.90.00",
+    ncm: "22089000",
     descricao: "Bebida ice",
     aliquota_interna_pb: 27,
     ...bebidasMva
   },
   {
-    ncm: "2207.20",
+    ncm: "22072000",
     descricao: "Cachaça e aguardentes",
     aliquota_interna_pb: 20,
     com_fidelidade: {
@@ -1009,7 +1278,7 @@ export const anexoV = [
     }
   },
   {
-    ncm: "2208.40.00",
+    ncm: "22084000",
     descricao: "Cachaça e aguardentes",
     aliquota_interna_pb: 20,
     com_fidelidade: {
@@ -1026,109 +1295,127 @@ export const anexoV = [
     }
   },
   {
-    ncm: "2206.00.90",
+    ncm: "22060090",
     descricao: "Catuaba e similares",
     aliquota_interna_pb: 27,
     ...bebidasMva
   },
   {
-    ncm: "2208.20.00",
+    ncm: "22082000",
     descricao: "Conhaque, brandy e similares",
     aliquota_interna_pb: 27,
     ...bebidasMva
   },
   {
-    ncm: "2206.00.90",
+    ncm: "22060090",
     descricao: "Cooler",
     aliquota_interna_pb: 27,
     ...bebidasMva
   },
   {
-    ncm: "2208.50.00",
+    ncm: "22085000",
     descricao: "Gim (gin) e genebra",
     aliquota_interna_pb: 27,
     ...bebidasMva
   },
   {
-    ncm: "2208.70.00",
+    ncm: "22087000",
     descricao: "Licores e similares",
     aliquota_interna_pb: 27,
     ...bebidasMva
   },
   {
-    ncm: "2208.20.00",
+    ncm: "22082000",
     descricao: "Pisco",
     aliquota_interna_pb: 27,
     ...bebidasMva
   },
   {
-    ncm: "2208.40.00",
+    ncm: "22084000",
     descricao: "Rum",
     aliquota_interna_pb: 27,
     ...bebidasMva
   },
   {
-    ncm: "2206.00.90",
+    ncm: "22060090",
     descricao: "Saquê",
     aliquota_interna_pb: 27,
     ...bebidasMva
   },
   {
-    ncm: "2208.90.00",
+    ncm: "22089000",
     descricao: "Steinhaeger",
     aliquota_interna_pb: 27,
     ...bebidasMva
   },
   {
-    ncm: "2208.90.00",
+    ncm: "22089000",
     descricao: "Tequila",
     aliquota_interna_pb: 27,
     ...bebidasMva
   },
   {
-    ncm: "2208.30",
-    descricao: "Uísque",
+    ncm: "22083010",
+    descricao: "Uísque (whisky)",
     aliquota_interna_pb: 27,
     ...bebidasMva
   },
   {
-    ncm: "2205",
+    ncm: "22083020",
+    descricao: "Uísque (whisky)",
+    aliquota_interna_pb: 27,
+    ...bebidasMva
+  },
+  {
+    ncm: "22083090",
+    descricao: "Uísque (whisky)",
+    aliquota_interna_pb: 27,
+    ...bebidasMva
+  },
+  {
+    ncm: "22051000",
     descricao: "Vermute e similares",
     aliquota_interna_pb: 27,
     ...bebidasMva
   },
   {
-    ncm: "2208.60.00",
+    ncm: "22059000",
+    descricao: "Vermute e similares",
+    aliquota_interna_pb: 27,
+    ...bebidasMva
+  },
+  {
+    ncm: "22086000",
     descricao: "Vodka",
     aliquota_interna_pb: 27,
     ...bebidasMva
   },
   {
-    ncm: "2208.90.00",
+    ncm: "22089000",
     descricao: "Derivados de vodka",
     aliquota_interna_pb: 27,
     ...bebidasMva
   },
   {
-    ncm: "2208.90.00",
+    ncm: "22089000",
     descricao: "Arak",
     aliquota_interna_pb: 27,
     ...bebidasMva
   },
   {
-    ncm: "2208.20.00",
+    ncm: "22082000",
     descricao: "Aguardente vínica/grappa",
     aliquota_interna_pb: 27,
     ...bebidasMva
   },
   {
-    ncm: "2206.00.10",
+    ncm: "22060010",
     descricao: "Sidra e similares",
     aliquota_interna_pb: 27,
     ...bebidasMva
   },
   {
-    ncm: "2206.00.90",
+    ncm: "22060090",
     cest: "02.024.00",
     descricao: "Sangrias e coquetéis",
     aliquota_interna_pb: 27,
@@ -1146,16 +1433,88 @@ export const anexoV = [
     }
   },
   {
-    ncm: "2204",
+    ncm: "22041010",
     cest: "02.001.00",
     descricao: "Vinhos de uvas frescas, incluindo os vinhos enriquecidos com álcool",
+    aliquota_interna_pb: 27,
+    ...bebidasMva
+  },
+  {
+    ncm: "22041090",
+    cest: "02.001.00",
+    descricao: "Vinhos de uvas frescas, incluindo os vinhos enriquecidos com álcool",
+    aliquota_interna_pb: 27,
+    ...bebidasMva
+  },
+  {
+    ncm: "22042100",
+    cest: "02.001.00",
+    descricao: "Vinhos de uvas frescas, incluindo os vinhos enriquecidos com álcool",
+    aliquota_interna_pb: 27,
+    ...bebidasMva
+  },
+  {
+    ncm: "22042211",
+    cest: "02.001.00",
+    descricao: "Vinhos de uvas frescas, incluindo os vinhos enriquecidos com álcool",
+    aliquota_interna_pb: 27,
+    ...bebidasMva
+  },
+  {
+    ncm: "22042219",
+    cest: "02.001.00",
+    descricao: "Vinhos de uvas frescas, incluindo os vinhos enriquecidos com álcool",
+    aliquota_interna_pb: 27,
+    ...bebidasMva
+  },
+  {
+    ncm: "22042911",
+    cest: "02.001.00",
+    descricao: "Vinhos de uvas frescas, incluindo os vinhos enriquecidos com álcool",
+    aliquota_interna_pb: 27,
+    ...bebidasMva
+  },
+  {
+    ncm: "22042919",
+    cest: "02.001.00",
+    descricao: "Vinhos de uvas frescas, incluindo os vinhos enriquecidos com álcool",
+    aliquota_interna_pb: 27,
+    ...bebidasMva
+  },
+  {
+    ncm: "22011000",
+    descricao: "Águas minerais, gasosas ou não, ou potáveis",
+    aliquota_interna_pb: 20,
+    ...bebidasMva
+  },
+  {
+    ncm: "22019000",
+    descricao: "Águas minerais, gasosas ou não, ou potáveis",
+    aliquota_interna_pb: 20,
+    ...bebidasMva
+  },
+  {
+    ncm: "22021000",
+    descricao: "Refrigerantes, águas minerais, gasosas ou não, ou potáveis",
+    aliquota_interna_pb: 20,
+    ...bebidasMva
+  },
+  {
+    ncm: "22029900",
+    descricao: "Refrigerantes, águas minerais, gasosas ou não, ou potáveis",
+    aliquota_interna_pb: 20,
+    ...bebidasMva
+  },
+  {
+    ncm: "24022000",
+    descricao: "Cigarros",
     aliquota_interna_pb: 27,
     ...bebidasMva
   },
 
   // CEST 05. Cimentos
   {
-    ncm: "2523",
+    ncm: "25231000",
     cest: "05.001.00",
     descricao: "Cimento",
     aliquota_interna_pb: 20,
@@ -1170,6 +1529,492 @@ export const anexoV = [
       inter_4: 44.00,
       inter_7: 39.50,
       inter_12: 32.00
+    }
+  },
+  {
+    ncm: "25232100",
+    cest: "05.001.00",
+    descricao: "Cimento",
+    aliquota_interna_pb: 20,
+    com_fidelidade: {
+      interno: 20.00,
+      inter_4: 44.00,
+      inter_7: 39.50,
+      inter_12: 32.00
+    },
+    sem_fidelidade: {
+      interno: 20.00,
+      inter_4: 44.00,
+      inter_7: 39.50,
+      inter_12: 32.00
+    }
+  },
+  {
+    ncm: "25232910",
+    cest: "05.001.00",
+    descricao: "Cimento",
+    aliquota_interna_pb: 20,
+    com_fidelidade: {
+      interno: 20.00,
+      inter_4: 44.00,
+      inter_7: 39.50,
+      inter_12: 32.00
+    },
+    sem_fidelidade: {
+      interno: 20.00,
+      inter_4: 44.00,
+      inter_7: 39.50,
+      inter_12: 32.00
+    }
+  },
+  {
+    ncm: "25232990",
+    cest: "05.001.00",
+    descricao: "Cimento",
+    aliquota_interna_pb: 20,
+    com_fidelidade: {
+      interno: 20.00,
+      inter_4: 44.00,
+      inter_7: 39.50,
+      inter_12: 32.00
+    },
+    sem_fidelidade: {
+      interno: 20.00,
+      inter_4: 44.00,
+      inter_7: 39.50,
+      inter_12: 32.00
+    }
+  },
+  {
+    ncm: "25233000",
+    cest: "05.001.00",
+    descricao: "Cimento",
+    aliquota_interna_pb: 20,
+    com_fidelidade: {
+      interno: 20.00,
+      inter_4: 44.00,
+      inter_7: 39.50,
+      inter_12: 32.00
+    },
+    sem_fidelidade: {
+      interno: 20.00,
+      inter_4: 44.00,
+      inter_7: 39.50,
+      inter_12: 32.00
+    }
+  },
+  {
+    ncm: "25239000",
+    cest: "05.001.00",
+    descricao: "Cimento",
+    aliquota_interna_pb: 20,
+    com_fidelidade: {
+      interno: 20.00,
+      inter_4: 44.00,
+      inter_7: 39.50,
+      inter_12: 32.00
+    },
+    sem_fidelidade: {
+      interno: 20.00,
+      inter_4: 44.00,
+      inter_7: 39.50,
+      inter_12: 32.00
+    }
+  },
+
+  // CEST 06. Combustíveis
+  {
+    ncm: "27101921",
+    descricao: "Combustíveis",
+    aliquota_interna_pb: 20,
+    ...bebidasMva
+  },
+  {
+    ncm: "27101922",
+    descricao: "Combustíveis",
+    aliquota_interna_pb: 20,
+    ...bebidasMva
+  },
+  {
+    ncm: "27101929",
+    descricao: "Combustíveis",
+    aliquota_interna_pb: 20,
+    ...bebidasMva
+  },
+  {
+    ncm: "27102000",
+    descricao: "Combustíveis",
+    aliquota_interna_pb: 20,
+    ...bebidasMva
+  },
+
+  // CEST 10. Construção
+  {
+    ncm: "39211100",
+    descricao: "Chapas e telhas de plástico",
+    aliquota_interna_pb: 20,
+    ...bebidasMva
+  },
+  {
+    ncm: "39211200",
+    descricao: "Chapas e telhas de plástico",
+    aliquota_interna_pb: 20,
+    ...bebidasMva
+  },
+  {
+    ncm: "39211300",
+    descricao: "Chapas e telhas de plástico",
+    aliquota_interna_pb: 20,
+    ...bebidasMva
+  },
+  {
+    ncm: "39211400",
+    descricao: "Chapas e telhas de plástico",
+    aliquota_interna_pb: 20,
+    ...bebidasMva
+  },
+  {
+    ncm: "39211900",
+    descricao: "Chapas e telhas de plástico",
+    aliquota_interna_pb: 20,
+    ...bebidasMva
+  },
+  {
+    ncm: "39219011",
+    descricao: "Chapas e telhas de plástico",
+    aliquota_interna_pb: 20,
+    ...bebidasMva
+  },
+  {
+    ncm: "39219019",
+    descricao: "Chapas e telhas de plástico",
+    aliquota_interna_pb: 20,
+    ...bebidasMva
+  },
+  {
+    ncm: "39219020",
+    descricao: "Chapas e telhas de plástico",
+    aliquota_interna_pb: 20,
+    ...bebidasMva
+  },
+  {
+    ncm: "39219090",
+    descricao: "Chapas e telhas de plástico",
+    aliquota_interna_pb: 20,
+    ...bebidasMva
+  },
+  {
+    ncm: "69010000",
+    descricao: "Construção Geral",
+    aliquota_interna_pb: 20,
+    ...bebidasMva
+  },
+  {
+    ncm: "70099100",
+    descricao: "Construção Geral",
+    aliquota_interna_pb: 20,
+    ...bebidasMva
+  },
+  {
+    ncm: "70099200",
+    descricao: "Construção Geral",
+    aliquota_interna_pb: 20,
+    ...bebidasMva
+  },
+  {
+    ncm: "73101010",
+    descricao: "Construção Geral",
+    aliquota_interna_pb: 20,
+    ...bebidasMva
+  },
+  {
+    ncm: "73101090",
+    descricao: "Construção Geral",
+    aliquota_interna_pb: 20,
+    ...bebidasMva
+  },
+  {
+    ncm: "73102110",
+    descricao: "Construção Geral",
+    aliquota_interna_pb: 20,
+    ...bebidasMva
+  },
+  {
+    ncm: "73102190",
+    descricao: "Construção Geral",
+    aliquota_interna_pb: 20,
+    ...bebidasMva
+  },
+  {
+    ncm: "73102910",
+    descricao: "Construção Geral",
+    aliquota_interna_pb: 20,
+    ...bebidasMva
+  },
+  {
+    ncm: "73102990",
+    descricao: "Construção Geral",
+    aliquota_interna_pb: 20,
+    ...bebidasMva
+  },
+
+  // CEST 13. Medicamentos
+  {
+    ncm: "30021210",
+    descricao: "Vacinas e Sangue",
+    aliquota_interna_pb: 20,
+    ...bebidasMva
+  },
+  {
+    ncm: "30021220",
+    descricao: "Vacinas e Sangue",
+    aliquota_interna_pb: 20,
+    ...bebidasMva
+  },
+  {
+    ncm: "30021230",
+    descricao: "Vacinas e Sangue",
+    aliquota_interna_pb: 20,
+    ...bebidasMva
+  },
+  {
+    ncm: "30021300",
+    descricao: "Vacinas e Sangue",
+    aliquota_interna_pb: 20,
+    ...bebidasMva
+  },
+  {
+    ncm: "30021400",
+    descricao: "Vacinas e Sangue",
+    aliquota_interna_pb: 20,
+    ...bebidasMva
+  },
+  {
+    ncm: "30021500",
+    descricao: "Vacinas e Sangue",
+    aliquota_interna_pb: 20,
+    ...bebidasMva
+  },
+  {
+    ncm: "30024111",
+    descricao: "Vacinas e Sangue",
+    aliquota_interna_pb: 20,
+    ...bebidasMva
+  },
+  {
+    ncm: "30024112",
+    descricao: "Vacinas e Sangue",
+    aliquota_interna_pb: 20,
+    ...bebidasMva
+  },
+  {
+    ncm: "30024113",
+    descricao: "Vacinas e Sangue",
+    aliquota_interna_pb: 20,
+    ...bebidasMva
+  },
+  {
+    ncm: "30024119",
+    descricao: "Vacinas e Sangue",
+    aliquota_interna_pb: 20,
+    ...bebidasMva
+  },
+
+  // CEST 17. Alimentos
+  {
+    ncm: "11010010",
+    descricao: "Trigo e Massas",
+    aliquota_interna_pb: 20,
+    ...bebidasMva
+  },
+  {
+    ncm: "19023000",
+    descricao: "Trigo e Massas",
+    aliquota_interna_pb: 20,
+    ...bebidasMva
+  },
+  {
+    ncm: "19052010",
+    descricao: "Biscoitos e Panetones",
+    aliquota_interna_pb: 20,
+    ...bebidasMva
+  },
+  {
+    ncm: "19053100",
+    descricao: "Biscoitos e Panetones",
+    aliquota_interna_pb: 20,
+    ...bebidasMva
+  },
+
+  // CEST 12 e 21. Materiais Elétricos e Eletrônicos
+  {
+    ncm: "85392110",
+    descricao: "Lâmpadas e Reatores",
+    aliquota_interna_pb: 20,
+    ...bebidasMva
+  },
+  {
+    ncm: "85392190",
+    descricao: "Lâmpadas e Reatores",
+    aliquota_interna_pb: 20,
+    ...bebidasMva
+  },
+  {
+    ncm: "85393100",
+    descricao: "Lâmpadas e Reatores",
+    aliquota_interna_pb: 20,
+    ...bebidasMva
+  },
+  {
+    ncm: "85395200",
+    descricao: "Lâmpadas e Reatores",
+    aliquota_interna_pb: 20,
+    ...bebidasMva
+  },
+
+  // CEST 20. Perfumaria e Higiene Pessoal
+  {
+    ncm: "3306.10.00",
+    cest: "20.023.00",
+    descricao: "Dentifrícios",
+    aliquota_interna_pb: 20,
+    com_fidelidade: {
+      interno: 33.05,
+      inter_4: 59.66,
+      inter_7: 54.67,
+      inter_12: 46.36
+    },
+    sem_fidelidade: {
+      interno: 33.05,
+      inter_4: 59.66,
+      inter_7: 54.67,
+      inter_12: 46.36
+    }
+  },
+  {
+    ncm: "3923.30.90",
+    cest: "20.063.00",
+    descricao: "Mamadeiras",
+    aliquota_interna_pb: 20,
+    com_fidelidade: {
+      interno: 67.96,
+      inter_4: 101.55,
+      inter_7: 95.25,
+      inter_12: 84.76
+    },
+    sem_fidelidade: {
+      interno: 67.96,
+      inter_4: 101.55,
+      inter_7: 95.25,
+      inter_12: 84.76
+    }
+  },
+  {
+    ncm: "3924.10.00",
+    cest: "20.063.00",
+    descricao: "Mamadeiras",
+    aliquota_interna_pb: 20,
+    com_fidelidade: {
+      interno: 67.96,
+      inter_4: 101.55,
+      inter_7: 95.25,
+      inter_12: 84.76
+    },
+    sem_fidelidade: {
+      interno: 67.96,
+      inter_4: 101.55,
+      inter_7: 95.25,
+      inter_12: 84.76
+    }
+  },
+  {
+    ncm: "3924.90.00",
+    cest: "20.063.00",
+    descricao: "Mamadeiras",
+    aliquota_interna_pb: 20,
+    com_fidelidade: {
+      interno: 67.96,
+      inter_4: 101.55,
+      inter_7: 95.25,
+      inter_12: 84.76
+    },
+    sem_fidelidade: {
+      interno: 67.96,
+      inter_4: 101.55,
+      inter_7: 95.25,
+      inter_12: 84.76
+    }
+  },
+  {
+    ncm: "4014.90.90",
+    cest: "20.063.00",
+    descricao: "Mamadeiras",
+    aliquota_interna_pb: 20,
+    com_fidelidade: {
+      interno: 67.96,
+      inter_4: 101.55,
+      inter_7: 95.25,
+      inter_12: 84.76
+    },
+    sem_fidelidade: {
+      interno: 67.96,
+      inter_4: 101.55,
+      inter_7: 95.25,
+      inter_12: 84.76
+    }
+  },
+  {
+    ncm: "7013",
+    cest: "20.063.00",
+    descricao: "Mamadeiras",
+    aliquota_interna_pb: 20,
+    com_fidelidade: {
+      interno: 67.96,
+      inter_4: 101.55,
+      inter_7: 95.25,
+      inter_12: 84.76
+    },
+    sem_fidelidade: {
+      interno: 67.96,
+      inter_4: 101.55,
+      inter_7: 95.25,
+      inter_12: 84.76
+    }
+  },
+  {
+    ncm: "8212.10.20",
+    cest: "20.064.00",
+    descricao: "Aparelhos e lâminas de barbear",
+    aliquota_interna_pb: 20,
+    com_fidelidade: {
+      interno: 30.00,
+      inter_4: 56.00,
+      inter_7: 51.13,
+      inter_12: 43.00
+    },
+    sem_fidelidade: {
+      interno: 30.00,
+      inter_4: 56.00,
+      inter_7: 51.13,
+      inter_12: 43.00
+    }
+  },
+  {
+    ncm: "8212.20.10",
+    cest: "20.064.00",
+    descricao: "Aparelhos e lâminas de barbear",
+    aliquota_interna_pb: 20,
+    com_fidelidade: {
+      interno: 30.00,
+      inter_4: 56.00,
+      inter_7: 51.13,
+      inter_12: 43.00
+    },
+    sem_fidelidade: {
+      interno: 30.00,
+      inter_4: 56.00,
+      inter_7: 51.13,
+      inter_12: 43.00
     }
   }
 ];

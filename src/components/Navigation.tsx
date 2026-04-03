@@ -1,10 +1,10 @@
 
 import React from 'react';
-import { Search, FileCode, FileText, ExternalLink, ClipboardList, FileArchive } from 'lucide-react';
+import { Search, FileCode, FileText, ExternalLink, ClipboardList, FileArchive, Layers } from 'lucide-react';
 
 interface NavigationProps {
-  currentView: 'search' | 'xml' | 'sped' | 'zip';
-  onViewChange: (view: 'search' | 'xml' | 'sped' | 'zip') => void;
+  currentView: 'search' | 'xml' | 'sped' | 'zip' | 'st-batch';
+  onViewChange: (view: 'search' | 'xml' | 'sped' | 'zip' | 'st-batch') => void;
 }
 
 export default function Navigation({ currentView, onViewChange }: NavigationProps) {
@@ -31,6 +31,12 @@ export default function Navigation({ currentView, onViewChange }: NavigationProp
             onClick={() => onViewChange('zip')}
             icon={<FileArchive className="w-4 h-4" />}
             label="Análise ZIP"
+          />
+          <NavItem 
+            active={currentView === 'st-batch'} 
+            onClick={() => onViewChange('st-batch')}
+            icon={<Layers className="w-4 h-4" />}
+            label="Verificação ST"
           />
           <NavItem 
             active={currentView === 'sped'} 
